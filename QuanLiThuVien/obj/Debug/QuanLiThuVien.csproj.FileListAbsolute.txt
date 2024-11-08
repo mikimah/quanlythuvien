@@ -1,0 +1,10 @@
+E:\c++\QuanLiThuVien\bin\Debug\QuanLiThuVien.exe.config
+E:\c++\QuanLiThuVien\bin\Debug\QuanLiThuVien.exe
+E:\c++\QuanLiThuVien\bin\Debug\QuanLiThuVien.pdb
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.csproj.AssemblyReference.cache
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.Form1.resources
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.Properties.Resources.resources
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.csproj.GenerateResource.cache
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.csproj.CoreCompileInputs.cache
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.exe
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.pdb
