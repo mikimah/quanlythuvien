@@ -7,6 +7,7 @@ using System.Xml.Linq;
 
 namespace QuanLiThuVien
 {
+    [Serializable]
     internal class Sach
     {
         private string idB;

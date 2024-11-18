@@ -47,6 +47,9 @@
             this.colAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDateP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.tb_Amount = new System.Windows.Forms.ComboBox();
             this.btn_Cancel2 = new System.Windows.Forms.Button();
             this.btn_Save2 = new System.Windows.Forms.Button();
             this.btn_Search2 = new System.Windows.Forms.Button();
@@ -61,10 +64,11 @@
             this.dtp_DateP = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.tb_Genre = new System.Windows.Forms.TextBox();
+            this.tb_Genre = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.tb_IdB = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.tb_NameB = new System.Windows.Forms.TextBox();
@@ -93,13 +97,50 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_nameM = new System.Windows.Forms.TextBox();
             this.dataView3 = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.colIdM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNameM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colClassM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPhoneM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAddressM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btn_Exit1 = new System.Windows.Forms.Button();
+            this.dataView1 = new System.Windows.Forms.DataGridView();
+            this.colIdBDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIdTVDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNameBDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNameTVDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDateS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDateE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel20 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tb_NumOfDate = new System.Windows.Forms.ComboBox();
+            this.btn_Cancel1 = new System.Windows.Forms.Button();
+            this.btn_Save1 = new System.Windows.Forms.Button();
+            this.btn_Search1 = new System.Windows.Forms.Button();
+            this.btn_Delete1 = new System.Windows.Forms.Button();
+            this.btn_Adjust1 = new System.Windows.Forms.Button();
+            this.btn_Add1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtp_DateS = new System.Windows.Forms.DateTimePicker();
+            this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tb_NameTV_DK = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel18 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.dtp_DateE = new System.Windows.Forms.DateTimePicker();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_IdTV_DK = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tb_IdB_DK = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tb_NameB_DK = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataView4)).BeginInit();
             this.panel3.SuspendLayout();
@@ -108,6 +149,7 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataView2)).BeginInit();
             this.panel2.SuspendLayout();
+            this.flowLayoutPanel19.SuspendLayout();
             this.flowLayoutPanel11.SuspendLayout();
             this.flowLayoutPanel10.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
@@ -122,6 +164,16 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataView3)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataView1)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.flowLayoutPanel20.SuspendLayout();
+            this.flowLayoutPanel15.SuspendLayout();
+            this.flowLayoutPanel14.SuspendLayout();
+            this.flowLayoutPanel18.SuspendLayout();
+            this.flowLayoutPanel6.SuspendLayout();
+            this.flowLayoutPanel16.SuspendLayout();
+            this.flowLayoutPanel17.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -309,6 +361,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.flowLayoutPanel19);
             this.panel2.Controls.Add(this.btn_Cancel2);
             this.panel2.Controls.Add(this.btn_Save2);
             this.panel2.Controls.Add(this.btn_Search2);
@@ -324,6 +377,41 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1079, 210);
             this.panel2.TabIndex = 31;
+            // 
+            // flowLayoutPanel19
+            // 
+            this.flowLayoutPanel19.Controls.Add(this.label20);
+            this.flowLayoutPanel19.Controls.Add(this.tb_Amount);
+            this.flowLayoutPanel19.Location = new System.Drawing.Point(467, 108);
+            this.flowLayoutPanel19.Name = "flowLayoutPanel19";
+            this.flowLayoutPanel19.Size = new System.Drawing.Size(160, 36);
+            this.flowLayoutPanel19.TabIndex = 43;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(3, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(79, 20);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Số lượng:";
+            // 
+            // tb_Amount
+            // 
+            this.tb_Amount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tb_Amount.Enabled = false;
+            this.tb_Amount.FormattingEnabled = true;
+            this.tb_Amount.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.tb_Amount.Location = new System.Drawing.Point(88, 3);
+            this.tb_Amount.Name = "tb_Amount";
+            this.tb_Amount.Size = new System.Drawing.Size(45, 24);
+            this.tb_Amount.TabIndex = 44;
             // 
             // btn_Cancel2
             // 
@@ -397,7 +485,7 @@
             // 
             this.flowLayoutPanel11.Controls.Add(this.label11);
             this.flowLayoutPanel11.Controls.Add(this.tb_Author);
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(382, 24);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(467, 24);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
             this.flowLayoutPanel11.Size = new System.Drawing.Size(338, 36);
             this.flowLayoutPanel11.TabIndex = 33;
@@ -419,12 +507,13 @@
             this.tb_Author.Name = "tb_Author";
             this.tb_Author.Size = new System.Drawing.Size(225, 22);
             this.tb_Author.TabIndex = 1;
+            this.tb_Author.TextChanged += new System.EventHandler(this.tb_Author_TextChanged);
             // 
             // flowLayoutPanel10
             // 
             this.flowLayoutPanel10.Controls.Add(this.label10);
             this.flowLayoutPanel10.Controls.Add(this.dtp_DateP);
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(382, 66);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(467, 66);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
             this.flowLayoutPanel10.Size = new System.Drawing.Size(258, 36);
             this.flowLayoutPanel10.TabIndex = 32;
@@ -452,9 +541,9 @@
             // 
             this.flowLayoutPanel9.Controls.Add(this.label9);
             this.flowLayoutPanel9.Controls.Add(this.tb_Genre);
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(15, 105);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(15, 69);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(338, 36);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(257, 36);
             this.flowLayoutPanel9.TabIndex = 31;
             // 
             // label9
@@ -469,19 +558,33 @@
             // 
             // tb_Genre
             // 
+            this.tb_Genre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tb_Genre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.tb_Genre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tb_Genre.Enabled = false;
+            this.tb_Genre.FormattingEnabled = true;
+            this.tb_Genre.Items.AddRange(new object[] {
+            "Tiểu thuyết",
+            "Phi tiểu thuyết",
+            "Giáo dục",
+            "Nghệ thuật",
+            "Thiếu nhi",
+            "Tạp chí và báo chí",
+            "Khác..."});
             this.tb_Genre.Location = new System.Drawing.Point(82, 3);
             this.tb_Genre.Name = "tb_Genre";
-            this.tb_Genre.Size = new System.Drawing.Size(225, 22);
-            this.tb_Genre.TabIndex = 1;
+            this.tb_Genre.Size = new System.Drawing.Size(155, 24);
+            this.tb_Genre.TabIndex = 43;
+            this.tb_Genre.SelectedIndexChanged += new System.EventHandler(this.tb_Genre_SelectedIndexChanged);
             // 
             // flowLayoutPanel8
             // 
             this.flowLayoutPanel8.Controls.Add(this.label8);
             this.flowLayoutPanel8.Controls.Add(this.tb_IdB);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(15, 21);
+            this.flowLayoutPanel8.Controls.Add(this.label19);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(15, 108);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(324, 36);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(446, 36);
             this.flowLayoutPanel8.TabIndex = 29;
             // 
             // label8
@@ -499,15 +602,26 @@
             this.tb_IdB.Enabled = false;
             this.tb_IdB.Location = new System.Drawing.Point(87, 3);
             this.tb_IdB.Name = "tb_IdB";
-            this.tb_IdB.Size = new System.Drawing.Size(225, 22);
+            this.tb_IdB.Size = new System.Drawing.Size(213, 22);
             this.tb_IdB.TabIndex = 1;
             this.tb_IdB.TextChanged += new System.EventHandler(this.tb_IdB_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(306, 7);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(125, 13);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "(Để trống để ngẫu nhiên)";
             // 
             // flowLayoutPanel7
             // 
             this.flowLayoutPanel7.Controls.Add(this.label7);
             this.flowLayoutPanel7.Controls.Add(this.tb_NameB);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(15, 63);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(15, 27);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
             this.flowLayoutPanel7.Size = new System.Drawing.Size(338, 36);
             this.flowLayoutPanel7.TabIndex = 30;
@@ -529,6 +643,7 @@
             this.tb_NameB.Name = "tb_NameB";
             this.tb_NameB.Size = new System.Drawing.Size(225, 22);
             this.tb_NameB.TabIndex = 1;
+            this.tb_NameB.TextChanged += new System.EventHandler(this.tb_NameB_TextChanged);
             // 
             // tabPage1
             // 
@@ -598,7 +713,7 @@
             // 
             this.flowLayoutPanel5.Controls.Add(this.label5);
             this.flowLayoutPanel5.Controls.Add(this.tb_addressM);
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(427, 81);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(428, 66);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(338, 36);
             this.flowLayoutPanel5.TabIndex = 29;
@@ -669,7 +784,7 @@
             // 
             this.flowLayoutPanel4.Controls.Add(this.label4);
             this.flowLayoutPanel4.Controls.Add(this.tb_phoneM);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(427, 24);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(428, 20);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(338, 36);
             this.flowLayoutPanel4.TabIndex = 28;
@@ -696,7 +811,7 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.label3);
             this.flowLayoutPanel3.Controls.Add(this.tb_classM);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(16, 136);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(16, 104);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(203, 36);
             this.flowLayoutPanel3.TabIndex = 27;
@@ -745,13 +860,14 @@
             this.tb_idM.Name = "tb_idM";
             this.tb_idM.Size = new System.Drawing.Size(226, 22);
             this.tb_idM.TabIndex = 1;
+            this.tb_idM.Text = "DH";
             this.tb_idM.TextChanged += new System.EventHandler(this.tb_idM_TextChanged);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.label1);
             this.flowLayoutPanel1.Controls.Add(this.tb_nameM);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 81);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 62);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 36);
             this.flowLayoutPanel1.TabIndex = 25;
@@ -773,6 +889,7 @@
             this.tb_nameM.Name = "tb_nameM";
             this.tb_nameM.Size = new System.Drawing.Size(280, 22);
             this.tb_nameM.TabIndex = 1;
+            this.tb_nameM.TextChanged += new System.EventHandler(this.tb_nameM_TextChanged);
             // 
             // dataView3
             // 
@@ -793,6 +910,51 @@
             this.dataView3.TabIndex = 21;
             this.dataView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataView3_CellClick);
             // 
+            // colIdM
+            // 
+            this.colIdM.DataPropertyName = "IdTV";
+            this.colIdM.HeaderText = "Mã thành viên";
+            this.colIdM.MinimumWidth = 6;
+            this.colIdM.Name = "colIdM";
+            this.colIdM.ReadOnly = true;
+            this.colIdM.Width = 150;
+            // 
+            // colNameM
+            // 
+            this.colNameM.DataPropertyName = "NameTV";
+            this.colNameM.HeaderText = "Họ tên";
+            this.colNameM.MinimumWidth = 6;
+            this.colNameM.Name = "colNameM";
+            this.colNameM.ReadOnly = true;
+            this.colNameM.Width = 150;
+            // 
+            // colClassM
+            // 
+            this.colClassM.DataPropertyName = "ClassTV";
+            this.colClassM.HeaderText = "Lớp";
+            this.colClassM.MinimumWidth = 6;
+            this.colClassM.Name = "colClassM";
+            this.colClassM.ReadOnly = true;
+            this.colClassM.Width = 125;
+            // 
+            // colPhoneM
+            // 
+            this.colPhoneM.DataPropertyName = "Phone";
+            this.colPhoneM.HeaderText = "SĐT";
+            this.colPhoneM.MinimumWidth = 6;
+            this.colPhoneM.Name = "colPhoneM";
+            this.colPhoneM.ReadOnly = true;
+            this.colPhoneM.Width = 140;
+            // 
+            // colAddressM
+            // 
+            this.colAddressM.DataPropertyName = "Address";
+            this.colAddressM.HeaderText = "Địa chỉ";
+            this.colAddressM.MinimumWidth = 6;
+            this.colAddressM.Name = "colAddressM";
+            this.colAddressM.ReadOnly = true;
+            this.colAddressM.Width = 150;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage4);
@@ -808,52 +970,401 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btn_Exit1);
+            this.tabPage4.Controls.Add(this.dataView1);
+            this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1095, 512);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Đăng kí mượn sách";
+            this.tabPage4.Text = "Đăng kí mượn & trả sách";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // colIdM
+            // btn_Exit1
             // 
-            this.colIdM.DataPropertyName = "IdTV";
-            this.colIdM.HeaderText = "Mã thành viên";
-            this.colIdM.MinimumWidth = 6;
-            this.colIdM.Name = "colIdM";
-            this.colIdM.Width = 150;
+            this.btn_Exit1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit1.Location = new System.Drawing.Point(967, 466);
+            this.btn_Exit1.Name = "btn_Exit1";
+            this.btn_Exit1.Size = new System.Drawing.Size(93, 40);
+            this.btn_Exit1.TabIndex = 44;
+            this.btn_Exit1.Text = "Thoát";
+            this.btn_Exit1.UseVisualStyleBackColor = true;
+            this.btn_Exit1.Click += new System.EventHandler(this.btn_Exit1_Click);
             // 
-            // colNameM
+            // dataView1
             // 
-            this.colNameM.DataPropertyName = "NameTV";
-            this.colNameM.HeaderText = "Họ tên";
-            this.colNameM.MinimumWidth = 6;
-            this.colNameM.Name = "colNameM";
-            this.colNameM.Width = 150;
+            this.dataView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIdBDK,
+            this.colIdTVDK,
+            this.colNameBDK,
+            this.colNameTVDK,
+            this.colDateS,
+            this.colDateE});
+            this.dataView1.Location = new System.Drawing.Point(8, 222);
+            this.dataView1.MultiSelect = false;
+            this.dataView1.Name = "dataView1";
+            this.dataView1.ReadOnly = true;
+            this.dataView1.RowHeadersWidth = 51;
+            this.dataView1.RowTemplate.Height = 24;
+            this.dataView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataView1.Size = new System.Drawing.Size(1079, 236);
+            this.dataView1.TabIndex = 1;
+            this.dataView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // colClassM
+            // colIdBDK
             // 
-            this.colClassM.DataPropertyName = "ClassTV";
-            this.colClassM.HeaderText = "Lớp";
-            this.colClassM.MinimumWidth = 6;
-            this.colClassM.Name = "colClassM";
-            this.colClassM.Width = 125;
+            this.colIdBDK.DataPropertyName = "IdB_DK";
+            this.colIdBDK.HeaderText = "Mã sách";
+            this.colIdBDK.MinimumWidth = 6;
+            this.colIdBDK.Name = "colIdBDK";
+            this.colIdBDK.ReadOnly = true;
+            this.colIdBDK.Width = 125;
             // 
-            // colPhoneM
+            // colIdTVDK
             // 
-            this.colPhoneM.DataPropertyName = "Phone";
-            this.colPhoneM.HeaderText = "SĐT";
-            this.colPhoneM.MinimumWidth = 6;
-            this.colPhoneM.Name = "colPhoneM";
-            this.colPhoneM.Width = 140;
+            this.colIdTVDK.DataPropertyName = "IdTV_DK";
+            this.colIdTVDK.HeaderText = "Mã thành viên";
+            this.colIdTVDK.MinimumWidth = 6;
+            this.colIdTVDK.Name = "colIdTVDK";
+            this.colIdTVDK.ReadOnly = true;
+            this.colIdTVDK.Width = 125;
             // 
-            // colAddressM
+            // colNameBDK
             // 
-            this.colAddressM.DataPropertyName = "Address";
-            this.colAddressM.HeaderText = "Địa chỉ";
-            this.colAddressM.MinimumWidth = 6;
-            this.colAddressM.Name = "colAddressM";
-            this.colAddressM.Width = 150;
+            this.colNameBDK.DataPropertyName = "NameB_DK";
+            this.colNameBDK.HeaderText = "Tên sách";
+            this.colNameBDK.MinimumWidth = 6;
+            this.colNameBDK.Name = "colNameBDK";
+            this.colNameBDK.ReadOnly = true;
+            this.colNameBDK.Width = 125;
+            // 
+            // colNameTVDK
+            // 
+            this.colNameTVDK.DataPropertyName = "NameTV_DK";
+            this.colNameTVDK.HeaderText = "Tên thành viên";
+            this.colNameTVDK.MinimumWidth = 6;
+            this.colNameTVDK.Name = "colNameTVDK";
+            this.colNameTVDK.ReadOnly = true;
+            this.colNameTVDK.Width = 125;
+            // 
+            // colDateS
+            // 
+            this.colDateS.DataPropertyName = "DateS";
+            this.colDateS.HeaderText = "Ngày mượn";
+            this.colDateS.MinimumWidth = 6;
+            this.colDateS.Name = "colDateS";
+            this.colDateS.ReadOnly = true;
+            this.colDateS.Width = 125;
+            // 
+            // colDateE
+            // 
+            this.colDateE.DataPropertyName = "DateE";
+            this.colDateE.HeaderText = "Ngày trả";
+            this.colDateE.MinimumWidth = 6;
+            this.colDateE.Name = "colDateE";
+            this.colDateE.ReadOnly = true;
+            this.colDateE.Width = 125;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.flowLayoutPanel20);
+            this.panel4.Controls.Add(this.btn_Cancel1);
+            this.panel4.Controls.Add(this.btn_Save1);
+            this.panel4.Controls.Add(this.btn_Search1);
+            this.panel4.Controls.Add(this.btn_Delete1);
+            this.panel4.Controls.Add(this.btn_Adjust1);
+            this.panel4.Controls.Add(this.btn_Add1);
+            this.panel4.Controls.Add(this.flowLayoutPanel15);
+            this.panel4.Controls.Add(this.flowLayoutPanel14);
+            this.panel4.Controls.Add(this.flowLayoutPanel18);
+            this.panel4.Controls.Add(this.flowLayoutPanel6);
+            this.panel4.Controls.Add(this.flowLayoutPanel16);
+            this.panel4.Controls.Add(this.flowLayoutPanel17);
+            this.panel4.Location = new System.Drawing.Point(8, 6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1079, 210);
+            this.panel4.TabIndex = 0;
+            // 
+            // flowLayoutPanel20
+            // 
+            this.flowLayoutPanel20.Controls.Add(this.label21);
+            this.flowLayoutPanel20.Controls.Add(this.tb_NumOfDate);
+            this.flowLayoutPanel20.Location = new System.Drawing.Point(435, 20);
+            this.flowLayoutPanel20.Name = "flowLayoutPanel20";
+            this.flowLayoutPanel20.Size = new System.Drawing.Size(224, 36);
+            this.flowLayoutPanel20.TabIndex = 49;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(3, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(128, 20);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Thời gian mượn:";
+            // 
+            // tb_NumOfDate
+            // 
+            this.tb_NumOfDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tb_NumOfDate.Enabled = false;
+            this.tb_NumOfDate.FormattingEnabled = true;
+            this.tb_NumOfDate.Items.AddRange(new object[] {
+            "1 tuần",
+            "2 tuần",
+            "3 tuần"});
+            this.tb_NumOfDate.Location = new System.Drawing.Point(137, 3);
+            this.tb_NumOfDate.Name = "tb_NumOfDate";
+            this.tb_NumOfDate.Size = new System.Drawing.Size(45, 24);
+            this.tb_NumOfDate.TabIndex = 44;
+            this.tb_NumOfDate.SelectedIndexChanged += new System.EventHandler(this.tb_NumOfDate_SelectedIndexChanged);
+            // 
+            // btn_Cancel1
+            // 
+            this.btn_Cancel1.Enabled = false;
+            this.btn_Cancel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel1.Location = new System.Drawing.Point(959, 167);
+            this.btn_Cancel1.Name = "btn_Cancel1";
+            this.btn_Cancel1.Size = new System.Drawing.Size(93, 40);
+            this.btn_Cancel1.TabIndex = 48;
+            this.btn_Cancel1.Text = "Huỷ";
+            this.btn_Cancel1.UseVisualStyleBackColor = true;
+            this.btn_Cancel1.Click += new System.EventHandler(this.btn_Cancel1_Click);
+            // 
+            // btn_Save1
+            // 
+            this.btn_Save1.Enabled = false;
+            this.btn_Save1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save1.Location = new System.Drawing.Point(860, 167);
+            this.btn_Save1.Name = "btn_Save1";
+            this.btn_Save1.Size = new System.Drawing.Size(93, 40);
+            this.btn_Save1.TabIndex = 47;
+            this.btn_Save1.Text = "Xác nhận";
+            this.btn_Save1.UseVisualStyleBackColor = true;
+            this.btn_Save1.Click += new System.EventHandler(this.btn_Save1_Click);
+            // 
+            // btn_Search1
+            // 
+            this.btn_Search1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search1.Location = new System.Drawing.Point(959, 66);
+            this.btn_Search1.Name = "btn_Search1";
+            this.btn_Search1.Size = new System.Drawing.Size(93, 40);
+            this.btn_Search1.TabIndex = 46;
+            this.btn_Search1.Text = "Tìm kiếm thông tin";
+            this.btn_Search1.UseVisualStyleBackColor = true;
+            this.btn_Search1.Click += new System.EventHandler(this.btn_Search1_Click);
+            // 
+            // btn_Delete1
+            // 
+            this.btn_Delete1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete1.Location = new System.Drawing.Point(860, 66);
+            this.btn_Delete1.Name = "btn_Delete1";
+            this.btn_Delete1.Size = new System.Drawing.Size(93, 40);
+            this.btn_Delete1.TabIndex = 45;
+            this.btn_Delete1.Text = "Trả sách";
+            this.btn_Delete1.UseVisualStyleBackColor = true;
+            this.btn_Delete1.Click += new System.EventHandler(this.btn_Delete1_Click);
+            // 
+            // btn_Adjust1
+            // 
+            this.btn_Adjust1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Adjust1.Location = new System.Drawing.Point(959, 20);
+            this.btn_Adjust1.Name = "btn_Adjust1";
+            this.btn_Adjust1.Size = new System.Drawing.Size(93, 40);
+            this.btn_Adjust1.TabIndex = 44;
+            this.btn_Adjust1.Text = "Sửa thông tin";
+            this.btn_Adjust1.UseVisualStyleBackColor = true;
+            this.btn_Adjust1.Click += new System.EventHandler(this.btn_Adjust1_Click);
+            // 
+            // btn_Add1
+            // 
+            this.btn_Add1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add1.Location = new System.Drawing.Point(860, 20);
+            this.btn_Add1.Name = "btn_Add1";
+            this.btn_Add1.Size = new System.Drawing.Size(93, 40);
+            this.btn_Add1.TabIndex = 43;
+            this.btn_Add1.Text = "Mượn sách";
+            this.btn_Add1.UseVisualStyleBackColor = true;
+            this.btn_Add1.Click += new System.EventHandler(this.btn_Add1_Click);
+            // 
+            // flowLayoutPanel15
+            // 
+            this.flowLayoutPanel15.Controls.Add(this.label15);
+            this.flowLayoutPanel15.Controls.Add(this.dtp_DateS);
+            this.flowLayoutPanel15.Location = new System.Drawing.Point(435, 62);
+            this.flowLayoutPanel15.Name = "flowLayoutPanel15";
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(258, 36);
+            this.flowLayoutPanel15.TabIndex = 38;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(98, 20);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Ngày mượn:";
+            // 
+            // dtp_DateS
+            // 
+            this.dtp_DateS.Enabled = false;
+            this.dtp_DateS.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_DateS.Location = new System.Drawing.Point(107, 3);
+            this.dtp_DateS.Name = "dtp_DateS";
+            this.dtp_DateS.Size = new System.Drawing.Size(109, 22);
+            this.dtp_DateS.TabIndex = 1;
+            // 
+            // flowLayoutPanel14
+            // 
+            this.flowLayoutPanel14.Controls.Add(this.label14);
+            this.flowLayoutPanel14.Controls.Add(this.tb_NameTV_DK);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(13, 147);
+            this.flowLayoutPanel14.Name = "flowLayoutPanel14";
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(390, 36);
+            this.flowLayoutPanel14.TabIndex = 37;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(123, 20);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Tên thành viên:";
+            // 
+            // tb_NameTV_DK
+            // 
+            this.tb_NameTV_DK.Enabled = false;
+            this.tb_NameTV_DK.Location = new System.Drawing.Point(132, 3);
+            this.tb_NameTV_DK.Name = "tb_NameTV_DK";
+            this.tb_NameTV_DK.Size = new System.Drawing.Size(232, 22);
+            this.tb_NameTV_DK.TabIndex = 1;
+            this.tb_NameTV_DK.TextChanged += new System.EventHandler(this.tb_NameTV_DK_TextChanged);
+            // 
+            // flowLayoutPanel18
+            // 
+            this.flowLayoutPanel18.Controls.Add(this.label18);
+            this.flowLayoutPanel18.Controls.Add(this.dtp_DateE);
+            this.flowLayoutPanel18.Location = new System.Drawing.Point(435, 104);
+            this.flowLayoutPanel18.Name = "flowLayoutPanel18";
+            this.flowLayoutPanel18.Size = new System.Drawing.Size(216, 36);
+            this.flowLayoutPanel18.TabIndex = 33;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(77, 20);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Ngày trả:";
+            // 
+            // dtp_DateE
+            // 
+            this.dtp_DateE.Enabled = false;
+            this.dtp_DateE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_DateE.Location = new System.Drawing.Point(86, 3);
+            this.dtp_DateE.Name = "dtp_DateE";
+            this.dtp_DateE.Size = new System.Drawing.Size(109, 22);
+            this.dtp_DateE.TabIndex = 1;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Controls.Add(this.label6);
+            this.flowLayoutPanel6.Controls.Add(this.tb_IdTV_DK);
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(13, 105);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(390, 36);
+            this.flowLayoutPanel6.TabIndex = 36;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Mã thành viên:";
+            // 
+            // tb_IdTV_DK
+            // 
+            this.tb_IdTV_DK.Enabled = false;
+            this.tb_IdTV_DK.Location = new System.Drawing.Point(127, 3);
+            this.tb_IdTV_DK.Name = "tb_IdTV_DK";
+            this.tb_IdTV_DK.Size = new System.Drawing.Size(226, 22);
+            this.tb_IdTV_DK.TabIndex = 1;
+            this.tb_IdTV_DK.TextChanged += new System.EventHandler(this.tb_IdTV_DK_TextChanged);
+            // 
+            // flowLayoutPanel16
+            // 
+            this.flowLayoutPanel16.Controls.Add(this.label16);
+            this.flowLayoutPanel16.Controls.Add(this.tb_IdB_DK);
+            this.flowLayoutPanel16.Location = new System.Drawing.Point(13, 20);
+            this.flowLayoutPanel16.Name = "flowLayoutPanel16";
+            this.flowLayoutPanel16.Size = new System.Drawing.Size(324, 36);
+            this.flowLayoutPanel16.TabIndex = 34;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 20);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Mã sách:";
+            // 
+            // tb_IdB_DK
+            // 
+            this.tb_IdB_DK.Enabled = false;
+            this.tb_IdB_DK.Location = new System.Drawing.Point(87, 3);
+            this.tb_IdB_DK.Name = "tb_IdB_DK";
+            this.tb_IdB_DK.Size = new System.Drawing.Size(225, 22);
+            this.tb_IdB_DK.TabIndex = 1;
+            this.tb_IdB_DK.TextChanged += new System.EventHandler(this.tb_IdB_DK_TextChanged);
+            // 
+            // flowLayoutPanel17
+            // 
+            this.flowLayoutPanel17.Controls.Add(this.label17);
+            this.flowLayoutPanel17.Controls.Add(this.tb_NameB_DK);
+            this.flowLayoutPanel17.Location = new System.Drawing.Point(13, 62);
+            this.flowLayoutPanel17.Name = "flowLayoutPanel17";
+            this.flowLayoutPanel17.Size = new System.Drawing.Size(338, 36);
+            this.flowLayoutPanel17.TabIndex = 35;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(3, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(83, 20);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Tên sách:";
+            // 
+            // tb_NameB_DK
+            // 
+            this.tb_NameB_DK.Enabled = false;
+            this.tb_NameB_DK.Location = new System.Drawing.Point(92, 3);
+            this.tb_NameB_DK.Name = "tb_NameB_DK";
+            this.tb_NameB_DK.Size = new System.Drawing.Size(232, 22);
+            this.tb_NameB_DK.TabIndex = 1;
+            this.tb_NameB_DK.TextChanged += new System.EventHandler(this.tb_NameB_DK_TextChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(432, 153);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(191, 16);
+            this.label22.TabIndex = 50;
+            this.label22.Text = "làm checkempty, kiểm tra ngày";
             // 
             // Form1
             // 
@@ -876,6 +1387,8 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataView2)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.flowLayoutPanel19.ResumeLayout(false);
+            this.flowLayoutPanel19.PerformLayout();
             this.flowLayoutPanel11.ResumeLayout(false);
             this.flowLayoutPanel11.PerformLayout();
             this.flowLayoutPanel10.ResumeLayout(false);
@@ -900,6 +1413,24 @@
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataView3)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataView1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.flowLayoutPanel20.ResumeLayout(false);
+            this.flowLayoutPanel20.PerformLayout();
+            this.flowLayoutPanel15.ResumeLayout(false);
+            this.flowLayoutPanel15.PerformLayout();
+            this.flowLayoutPanel14.ResumeLayout(false);
+            this.flowLayoutPanel14.PerformLayout();
+            this.flowLayoutPanel18.ResumeLayout(false);
+            this.flowLayoutPanel18.PerformLayout();
+            this.flowLayoutPanel6.ResumeLayout(false);
+            this.flowLayoutPanel6.PerformLayout();
+            this.flowLayoutPanel16.ResumeLayout(false);
+            this.flowLayoutPanel16.PerformLayout();
+            this.flowLayoutPanel17.ResumeLayout(false);
+            this.flowLayoutPanel17.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -933,7 +1464,6 @@
         private System.Windows.Forms.DateTimePicker dtp_DateP;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tb_Genre;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tb_IdB;
@@ -978,6 +1508,48 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPhoneM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddressM;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel14;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tb_NameTV_DK;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tb_IdTV_DK;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel16;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox tb_IdB_DK;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel17;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox tb_NameB_DK;
+        private System.Windows.Forms.Button btn_Cancel1;
+        private System.Windows.Forms.Button btn_Save1;
+        private System.Windows.Forms.Button btn_Search1;
+        private System.Windows.Forms.Button btn_Delete1;
+        private System.Windows.Forms.Button btn_Adjust1;
+        private System.Windows.Forms.Button btn_Add1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel15;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dtp_DateS;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel18;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DateTimePicker dtp_DateE;
+        private System.Windows.Forms.Button btn_Exit1;
+        private System.Windows.Forms.DataGridView dataView1;
+        private System.Windows.Forms.ComboBox tb_Genre;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox tb_Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdBDK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdTVDK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNameBDK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNameTVDK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDateS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDateE;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox tb_NumOfDate;
+        private System.Windows.Forms.Label label22;
     }
 }
 

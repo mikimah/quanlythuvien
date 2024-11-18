@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLiThuVien
 {
+    [Serializable]
     internal class ThanhVien
     {
         private string nameTV;
