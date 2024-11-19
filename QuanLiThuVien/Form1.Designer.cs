@@ -140,7 +140,6 @@
             this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.tb_NameB_DK = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataView4)).BeginInit();
             this.panel3.SuspendLayout();
@@ -416,7 +415,7 @@
             // btn_Cancel2
             // 
             this.btn_Cancel2.Enabled = false;
-            this.btn_Cancel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel2.Location = new System.Drawing.Point(959, 167);
             this.btn_Cancel2.Name = "btn_Cancel2";
             this.btn_Cancel2.Size = new System.Drawing.Size(93, 40);
@@ -428,56 +427,56 @@
             // btn_Save2
             // 
             this.btn_Save2.Enabled = false;
-            this.btn_Save2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save2.Location = new System.Drawing.Point(860, 167);
             this.btn_Save2.Name = "btn_Save2";
             this.btn_Save2.Size = new System.Drawing.Size(93, 40);
             this.btn_Save2.TabIndex = 41;
-            this.btn_Save2.Text = "Lưu";
+            this.btn_Save2.Text = "Xác nhận";
             this.btn_Save2.UseVisualStyleBackColor = true;
             this.btn_Save2.Click += new System.EventHandler(this.btn_Save2_Click);
             // 
             // btn_Search2
             // 
-            this.btn_Search2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search2.Location = new System.Drawing.Point(860, 66);
             this.btn_Search2.Name = "btn_Search2";
             this.btn_Search2.Size = new System.Drawing.Size(93, 40);
             this.btn_Search2.TabIndex = 40;
-            this.btn_Search2.Text = "Tìm kiếm";
+            this.btn_Search2.Text = "Tìm kiếm sách";
             this.btn_Search2.UseVisualStyleBackColor = true;
             this.btn_Search2.Click += new System.EventHandler(this.btn_Search2_Click);
             // 
             // btn_Delete2
             // 
-            this.btn_Delete2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete2.Location = new System.Drawing.Point(959, 65);
             this.btn_Delete2.Name = "btn_Delete2";
             this.btn_Delete2.Size = new System.Drawing.Size(93, 40);
             this.btn_Delete2.TabIndex = 39;
-            this.btn_Delete2.Text = "Xoá";
+            this.btn_Delete2.Text = "Xoá thông tin";
             this.btn_Delete2.UseVisualStyleBackColor = true;
             this.btn_Delete2.Click += new System.EventHandler(this.btn_Delete2_Click);
             // 
             // btn_Adjust2
             // 
-            this.btn_Adjust2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Adjust2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Adjust2.Location = new System.Drawing.Point(959, 20);
             this.btn_Adjust2.Name = "btn_Adjust2";
             this.btn_Adjust2.Size = new System.Drawing.Size(93, 40);
             this.btn_Adjust2.TabIndex = 38;
-            this.btn_Adjust2.Text = "Sửa";
+            this.btn_Adjust2.Text = "Sửa thông tin sách";
             this.btn_Adjust2.UseVisualStyleBackColor = true;
             this.btn_Adjust2.Click += new System.EventHandler(this.btn_Adjust2_Click);
             // 
             // btn_Add2
             // 
-            this.btn_Add2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add2.Location = new System.Drawing.Point(860, 20);
             this.btn_Add2.Name = "btn_Add2";
             this.btn_Add2.Size = new System.Drawing.Size(93, 40);
             this.btn_Add2.TabIndex = 37;
-            this.btn_Add2.Text = "Thêm";
+            this.btn_Add2.Text = "Thêm sách";
             this.btn_Add2.UseVisualStyleBackColor = true;
             this.btn_Add2.Click += new System.EventHandler(this.btn_Add2_Click);
             // 
@@ -689,7 +688,8 @@
             // 
             // btn_Cancel3
             // 
-            this.btn_Cancel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel3.Enabled = false;
+            this.btn_Cancel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancel3.Location = new System.Drawing.Point(959, 167);
             this.btn_Cancel3.Name = "btn_Cancel3";
             this.btn_Cancel3.Size = new System.Drawing.Size(93, 40);
@@ -700,12 +700,13 @@
             // 
             // btn_Save3
             // 
-            this.btn_Save3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Save3.Enabled = false;
+            this.btn_Save3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save3.Location = new System.Drawing.Point(860, 167);
             this.btn_Save3.Name = "btn_Save3";
             this.btn_Save3.Size = new System.Drawing.Size(93, 40);
             this.btn_Save3.TabIndex = 35;
-            this.btn_Save3.Text = "Lưu";
+            this.btn_Save3.Text = "Xác nhận";
             this.btn_Save3.UseVisualStyleBackColor = true;
             this.btn_Save3.Click += new System.EventHandler(this.btn_Save3_Click);
             // 
@@ -738,45 +739,45 @@
             // 
             // btn_Search3
             // 
-            this.btn_Search3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search3.Location = new System.Drawing.Point(860, 66);
             this.btn_Search3.Name = "btn_Search3";
             this.btn_Search3.Size = new System.Drawing.Size(93, 40);
             this.btn_Search3.TabIndex = 34;
-            this.btn_Search3.Text = "Tìm kiếm";
+            this.btn_Search3.Text = "Tìm kiếm thông tin";
             this.btn_Search3.UseVisualStyleBackColor = true;
             this.btn_Search3.Click += new System.EventHandler(this.btn_Search3_Click);
             // 
             // btn_Delete3
             // 
-            this.btn_Delete3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete3.Location = new System.Drawing.Point(959, 65);
             this.btn_Delete3.Name = "btn_Delete3";
             this.btn_Delete3.Size = new System.Drawing.Size(93, 40);
             this.btn_Delete3.TabIndex = 33;
-            this.btn_Delete3.Text = "Xoá";
+            this.btn_Delete3.Text = "Xoá thông tin";
             this.btn_Delete3.UseVisualStyleBackColor = true;
             this.btn_Delete3.Click += new System.EventHandler(this.btn_Delete3_Click);
             // 
             // btn_Adjust3
             // 
-            this.btn_Adjust3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Adjust3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Adjust3.Location = new System.Drawing.Point(959, 20);
             this.btn_Adjust3.Name = "btn_Adjust3";
             this.btn_Adjust3.Size = new System.Drawing.Size(93, 40);
             this.btn_Adjust3.TabIndex = 32;
-            this.btn_Adjust3.Text = "Sửa";
+            this.btn_Adjust3.Text = "Sửa thông tin";
             this.btn_Adjust3.UseVisualStyleBackColor = true;
             this.btn_Adjust3.Click += new System.EventHandler(this.btn_Adjust3_Click);
             // 
             // btn_Add3
             // 
-            this.btn_Add3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add3.Location = new System.Drawing.Point(860, 20);
             this.btn_Add3.Name = "btn_Add3";
             this.btn_Add3.Size = new System.Drawing.Size(93, 40);
             this.btn_Add3.TabIndex = 29;
-            this.btn_Add3.Text = "Thêm";
+            this.btn_Add3.Text = "Thêm thành viên";
             this.btn_Add3.UseVisualStyleBackColor = true;
             this.btn_Add3.Click += new System.EventHandler(this.btn_Add3_Click);
             // 
@@ -1068,7 +1069,6 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label22);
             this.panel4.Controls.Add(this.flowLayoutPanel20);
             this.panel4.Controls.Add(this.btn_Cancel1);
             this.panel4.Controls.Add(this.btn_Save1);
@@ -1147,7 +1147,7 @@
             // 
             // btn_Search1
             // 
-            this.btn_Search1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search1.Location = new System.Drawing.Point(959, 66);
             this.btn_Search1.Name = "btn_Search1";
             this.btn_Search1.Size = new System.Drawing.Size(93, 40);
@@ -1169,7 +1169,7 @@
             // 
             // btn_Adjust1
             // 
-            this.btn_Adjust1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Adjust1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Adjust1.Location = new System.Drawing.Point(959, 20);
             this.btn_Adjust1.Name = "btn_Adjust1";
             this.btn_Adjust1.Size = new System.Drawing.Size(93, 40);
@@ -1327,6 +1327,7 @@
             this.tb_IdB_DK.Name = "tb_IdB_DK";
             this.tb_IdB_DK.Size = new System.Drawing.Size(225, 22);
             this.tb_IdB_DK.TabIndex = 1;
+            this.tb_IdB_DK.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tb_IdB_DK_MouseClick);
             this.tb_IdB_DK.TextChanged += new System.EventHandler(this.tb_IdB_DK_TextChanged);
             // 
             // flowLayoutPanel17
@@ -1356,15 +1357,6 @@
             this.tb_NameB_DK.Size = new System.Drawing.Size(232, 22);
             this.tb_NameB_DK.TabIndex = 1;
             this.tb_NameB_DK.TextChanged += new System.EventHandler(this.tb_NameB_DK_TextChanged);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(432, 153);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(191, 16);
-            this.label22.TabIndex = 50;
-            this.label22.Text = "làm checkempty, kiểm tra ngày";
             // 
             // Form1
             // 
@@ -1416,7 +1408,6 @@
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataView1)).EndInit();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.flowLayoutPanel20.ResumeLayout(false);
             this.flowLayoutPanel20.PerformLayout();
             this.flowLayoutPanel15.ResumeLayout(false);
@@ -1549,7 +1540,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox tb_NumOfDate;
-        private System.Windows.Forms.Label label22;
     }
 }
 

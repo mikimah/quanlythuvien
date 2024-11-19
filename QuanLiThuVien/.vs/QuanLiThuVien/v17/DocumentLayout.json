@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\M\u00E1y t\u00EDnh\\quanlythuvien\\QuanLiThuVien\\",
+  "WorkspaceRootPath": "E:\\c\u002B\u002B\\QuanLiThuVien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C10F646B-9ACF-428D-AF4F-1F436C221A9B}|QuanLiThuVien.csproj|c:\\users\\dell\\onedrive\\m\u00E1y t\u00EDnh\\quanlythuvien\\quanlithuvien\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C10F646B-9ACF-428D-AF4F-1F436C221A9B}|QuanLiThuVien.csproj|e:\\c\u002B\u002B\\quanlithuvien\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C10F646B-9ACF-428D-AF4F-1F436C221A9B}|QuanLiThuVien.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C10F646B-9ACF-428D-AF4F-1F436C221A9B}|QuanLiThuVien.csproj|C:\\Users\\DELL\\OneDrive\\M\u00E1y t\u00EDnh\\quanlythuvien\\QuanLiThuVien\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C10F646B-9ACF-428D-AF4F-1F436C221A9B}|QuanLiThuVien.csproj|E:\\c\u002B\u002B\\QuanLiThuVien\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C10F646B-9ACF-428D-AF4F-1F436C221A9B}|QuanLiThuVien.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C10F646B-9ACF-428D-AF4F-1F436C221A9B}|QuanLiThuVien.csproj|e:\\c\u002B\u002B\\quanlithuvien\\timkiemsach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C10F646B-9ACF-428D-AF4F-1F436C221A9B}|QuanLiThuVien.csproj|solutionrelative:timkiemsach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +22,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TimKiemSach.cs [Design]",
+              "DocumentMoniker": "E:\\c\u002B\u002B\\QuanLiThuVien\\TimKiemSach.cs",
+              "RelativeDocumentMoniker": "TimKiemSach.cs",
+              "ToolTip": "E:\\c\u002B\u002B\\QuanLiThuVien\\TimKiemSach.cs [Design]",
+              "RelativeToolTip": "TimKiemSach.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T03:09:26.445Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\M\u00E1y t\u00EDnh\\quanlythuvien\\QuanLiThuVien\\Form1.cs",
+              "DocumentMoniker": "E:\\c\u002B\u002B\\QuanLiThuVien\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\M\u00E1y t\u00EDnh\\quanlythuvien\\QuanLiThuVien\\Form1.cs",
+              "ToolTip": "E:\\c\u002B\u002B\\QuanLiThuVien\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAIA5wEUBAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAALAEAAAAAAAAAAAkwMMEAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-27T03:15:53.273Z",
               "EditorCaption": ""
@@ -37,9 +53,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\M\u00E1y t\u00EDnh\\quanlythuvien\\QuanLiThuVien\\Form1.cs",
+              "DocumentMoniker": "E:\\c\u002B\u002B\\QuanLiThuVien\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\M\u00E1y t\u00EDnh\\quanlythuvien\\QuanLiThuVien\\Form1.cs [Design]",
+              "ToolTip": "E:\\c\u002B\u002B\\QuanLiThuVien\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T02:53:01.708Z",

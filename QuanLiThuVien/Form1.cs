@@ -68,7 +68,7 @@ namespace QuanLiThuVien
                 tb_idM.Enabled = tb_nameM.Enabled = tb_classM.Enabled = tb_phoneM.Enabled = tb_addressM.Enabled = enable;
             }else if (num == 0)
             {
-                tb_IdB_DK.Enabled=tb_IdTV_DK.Enabled=tb_NameB_DK.Enabled=tb_NameTV_DK.Enabled=dtp_DateE.Enabled=dtp_DateS.Enabled=enable;
+                tb_IdB_DK.Enabled=tb_IdTV_DK.Enabled=tb_NameB_DK.Enabled=tb_NameTV_DK.Enabled=tb_NumOfDate.Enabled=enable;
             }
         }//re-usable
         void enableBtn(bool enable1, bool enable2) {
@@ -163,7 +163,7 @@ namespace QuanLiThuVien
             }
             else if (num == 0)
             {
-                if (tb_IdB_DK.Text == "" || tb_IdTV_DK.Text == "" || tb_NameB_DK.Text == "" || tb_NameTV_DK.Text == "")
+                if (tb_IdB_DK.Text == "" || tb_IdTV_DK.Text == "" || tb_NameB_DK.Text == "" || tb_NameTV_DK.Text == ""||tb_NumOfDate.Text=="")
                 {
                     return true;
                 }
@@ -317,8 +317,7 @@ namespace QuanLiThuVien
                 tb_IdTV_DK.Text = "";
                 tb_NameB_DK.Text = "";
                 tb_NameTV_DK.Text = "";
-                dtp_DateS.Value = DateTime.Now;
-                dtp_DateE.Value = DateTime.Now;
+                tb_NumOfDate.Text = "1 tuần";
             }
 
         }//re-useable
@@ -485,6 +484,7 @@ namespace QuanLiThuVien
                     statusBtn = "Adjust";
                     enableBtn(true, true);
                     enableTb(true);
+                    tb_NumOfDate.Enabled = false;
                     enableCtrl(false, true, false, false);
                     tb_IdB_DK.Text = dsdk[statusNum].IdB_DK;
                     tb_IdTV_DK.Text = dsdk[statusNum].IdTV_DK;
@@ -1210,6 +1210,17 @@ namespace QuanLiThuVien
             btnThoat();
         }
 
-    
+
+
+
+
+
+
+
+        //testing
+        private void tb_IdB_DK_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
