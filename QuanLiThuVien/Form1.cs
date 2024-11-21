@@ -25,18 +25,23 @@ namespace QuanLiThuVien
         List<Sach> dss = new List<Sach>();
         List<ThanhVien> dstv = new List<ThanhVien>();
         List<DangKi> dsdk = new List<DangKi>();
+        List<DangKi> dsls = new List<DangKi>();
         string statusBtn = "";
         int statusNum = -1;
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
          
             loadFileSach("dss.bin");
             loadFileThanhVien("dstv.bin");
             loadFileDangKi("dsdk.bin");
+            loadFileLichSu("dsls.bin");
             loadListB(dataView2, dss);
             loadListM(dataView3,dstv);
             loadListDK(dataView1, dsdk);
-            
+            loadListDK(dataView4, dsls);
+
         }
 
         private void loadListM(DataGridView dataView3, List<ThanhVien> dstv)
@@ -62,7 +67,7 @@ namespace QuanLiThuVien
             int num = tabControl1.SelectedIndex;//Dùng được nhiều lần dựa vào thứ tự tab
             if (num == 1)
             {
-                tb_IdB.Enabled = tb_NameB.Enabled = tb_Genre.Enabled = tb_Author.Enabled = dtp_DateP.Enabled = tb_Amount.Enabled = enable;
+                tb_IdB.Enabled = tb_NameB.Enabled = tb_Genre.Enabled = tb_Author.Enabled = dtp_DateP.Enabled = tb_Amount.Enabled=tb_Shelf.Enabled = enable;
             }else if(num ==2)
             {
                 tb_idM.Enabled = tb_nameM.Enabled = tb_classM.Enabled = tb_phoneM.Enabled = tb_addressM.Enabled = enable;
@@ -148,7 +153,7 @@ namespace QuanLiThuVien
             int num = tabControl1.SelectedIndex;
             if (num == 1)
             {
-                if (tb_NameB.Text == "" || tb_Genre.Text == "" || tb_Author.Text == ""||tb_IdB.Text=="")
+                if (tb_NameB.Text == "" || tb_Genre.Text == "" || tb_Author.Text == ""||tb_IdB.Text==""||tb_Shelf.Text=="")
                 {
                     return true;
                 }
@@ -163,10 +168,21 @@ namespace QuanLiThuVien
             }
             else if (num == 0)
             {
-                if (tb_IdB_DK.Text == "" || tb_IdTV_DK.Text == "" || tb_NameB_DK.Text == "" || tb_NameTV_DK.Text == ""||tb_NumOfDate.Text=="")
+                if (statusBtn == "Adjust")
                 {
-                    return true;
+                    if (tb_IdB_DK.Text == "" || tb_IdTV_DK.Text == "" || tb_NameB_DK.Text == "" || tb_NameTV_DK.Text == "")
+                    {
+                        return true;
+                    }
                 }
+                else
+                {
+                    if (tb_IdB_DK.Text == "" || tb_IdTV_DK.Text == "" || tb_NameB_DK.Text == "" || tb_NameTV_DK.Text == "" || tb_NumOfDate.Text == "")
+                    {
+                        return true;
+                    }
+                }
+              
             }
             return false;
         }//re-useable
@@ -260,10 +276,12 @@ namespace QuanLiThuVien
             foreach (var item in dstv)
             {
                 if (item.IdTV == tb_IdTV_DK.Text) num++;
+                break;
             }
             foreach (var item in dss)
             {
                 if (item.IdB == tb_IdB_DK.Text) num++;
+                break;
             }
             if (num == 2)
             {
@@ -323,11 +341,103 @@ namespace QuanLiThuVien
         }//re-useable
         private void tb_NumOfDate_SelectedIndexChanged(object sender, EventArgs e)
         {//tự động chọn ngày mượn ngày trả
-            string test = tb_NumOfDate.Text.Substring(0,1);
-            int num = int.Parse(test)*7;
-            DateTime dt = dtp_DateS.Value;
-            dtp_DateE.Value= dt.AddDays(num);
+            if (statusBtn != "Adjust")
+            {
+                string test = tb_NumOfDate.Text.Substring(0, 1);
+                int num = int.Parse(test) * 7;
+                DateTime dt = dtp_DateS.Value;
+                dtp_DateE.Value = dt.AddDays(num);
+
+            }
+            
         }
+        private void tb_Genre_SelectedIndexChanged(object sender, EventArgs e)
+        {//mỗi khi chọn thể loại thì kí tự đầu sẽ tự xuất hiện dưới mã sách cho tiện lợi và cho ngta bik
+            string genre = tb_Genre.Text.Trim();
+            if (statusBtn == "Search")
+            {
+                List<Sach> s1 = new List<Sach>();
+                foreach (var item in dss)
+                {
+                    if (item.Genre.Contains(tb_Genre.Text.Trim()))
+                    {
+                        s1.Add(item);
+                    }
+                }
+                loadListB(dataView2, s1);
+            }
+            switch (genre)
+            {
+                case "Tiểu thuyết":
+                    tb_IdB.Text = "A";
+                    break;
+                case "Phi tiểu thuyết":
+                    tb_IdB.Text = "B";
+                    break;
+                case "Giáo dục":
+                    tb_IdB.Text = "C";
+                    break;
+                case "Nghệ thuật":
+                    tb_IdB.Text = "D";
+                    break;
+                case "Thiếu nhi":
+                    tb_IdB.Text = "E";
+                    break;
+                case "Tạp chí và báo chí":
+                    tb_IdB.Text = "F";
+                    break;
+                default:
+                    tb_IdB.Text = "G";
+                    break;
+            }
+
+        }
+        private void tb_Shelf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (statusBtn == "Search")
+            {
+                List<Sach> s1 = new List<Sach>();
+                foreach (var item in dss)
+                {
+                    if (item.Shelf.Contains(tb_Shelf.Text.Trim()))
+                    {
+                        s1.Add(item);
+                    }
+                }
+                loadListB(dataView2, s1);
+            }
+        }
+        private bool themls(int vitri)
+        {
+            if (vitri != -1)
+            {
+                DangKi h = new DangKi();
+                h.IdB_DK = dsdk[vitri].IdB_DK;
+                h.IdTV_DK = dsdk[vitri].IdTV_DK;
+                h.NameTV_DK = dsdk[vitri].NameTV_DK;
+                h.NameB_DK = dsdk[vitri].NameB_DK;
+                h.DateS = dsdk[vitri].DateS;
+                h.DateE = dsdk[vitri].DateE;
+
+                dsls.Add(h);
+                loadListDK(dataView4, dsls);
+                return true;
+            }
+            return false;
+
+        }
+        private bool check5LanMuon(string id)
+        {
+            int num = 0;
+            foreach(var item in dsdk)
+            {
+                if (item.IdTV_DK == id) num++;
+            }
+            if (num == 5) { return true; }
+            else return false;
+
+        }
+
 
 
 
@@ -356,6 +466,13 @@ namespace QuanLiThuVien
         private void btn_Add1_Click(object sender, EventArgs e)
         {
             statusBtn = "Add";
+            if (tb_NumOfDate.Text != "")
+            {
+                string test = tb_NumOfDate.Text.Substring(0, 1);
+                int num = int.Parse(test) * 7;
+                DateTime dt = dtp_DateS.Value;
+                dtp_DateE.Value = dt.AddDays(num);
+            }
             enableBtn(true, true);
             enableTb(true);
             enableCtrl(true, false, false, false);
@@ -369,9 +486,10 @@ namespace QuanLiThuVien
         {
             if (statusBtn == "Search")
             {
+                int searchNum = e.RowIndex;
                 for(int i = 0; i < dss.Count; i++)
                 {
-                    if (dss[i].IdB == tb_IdB.Text) statusNum = i;
+                    if (dss[i].IdB == dataView2.Rows[searchNum].Cells[0].Value.ToString()) statusNum = i;
                 }
             }
             else { statusNum = e.RowIndex; }  
@@ -380,9 +498,10 @@ namespace QuanLiThuVien
         {
             if (statusBtn == "Search")
             {
+                int searchNum = e.RowIndex;
                 for (int i = 0; i < dstv.Count; i++)
                 {
-                    if (dstv[i].IdTV == tb_idM.Text) statusNum = i;
+                    if (dstv[i].IdTV == dataView3.Rows[searchNum].Cells[0].Value.ToString()) statusNum = i;
                 }
             }
             else { statusNum = e.RowIndex; }
@@ -391,9 +510,10 @@ namespace QuanLiThuVien
         {
             if(statusBtn == "Search")
             {
-                for(int i = 0; i < dsdk.Count; i++)
+                int searchNum = e.RowIndex;
+                for (int i = 0; i < dsdk.Count; i++)
                 {
-                    if (dsdk[i].IdB_DK==tb_IdB_DK.Text) statusNum = i;
+                    if (dsdk[i].IdB_DK == dataView1.Rows[searchNum].Cells[0].Value.ToString()) statusNum = i;
                 }
             }
             else { statusNum = e.RowIndex; }
@@ -414,11 +534,12 @@ namespace QuanLiThuVien
                     tb_IdB.Enabled = false;
                     tb_Amount.Enabled = false;
                     enableCtrl(false, true, false, false);
-                    tb_IdB.Text = dss[statusNum].IdB;
                     tb_NameB.Text = dss[statusNum].NameB;
                     tb_Genre.Text = dss[statusNum].Genre;
+                    tb_IdB.Text = dss[statusNum].IdB;
                     tb_Author.Text = dss[statusNum].Author;
                     dtp_DateP.Value = dss[statusNum].DateP;
+                    tb_Shelf.Text = dss[statusNum].Shelf;
                     dataView2.Enabled = false;
                 }
                 catch (Exception ex)
@@ -512,6 +633,9 @@ namespace QuanLiThuVien
 
 
 
+
+
+
         //Nút xoá
         private void btn_Delete2_Click(object sender, EventArgs e)
         {
@@ -563,12 +687,25 @@ namespace QuanLiThuVien
                 if (statusNum < 0) { MessageBox.Show("Hãy chọn 1 đối tượng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 else
                 {
-                    DialogResult kq = MessageBox.Show("Bạn có chắc là muốn xoá đối tượng này?", "Hey!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq = MessageBox.Show("Bạn có chắc không? (Yes = Lưu&Xoá | No = Xoá)", "Hey!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.Yes)
+                    {
+                        if (themls(statusNum) == true)
+                            MessageBox.Show("Thêm vào lịch sử thành công!", "Thông báo", MessageBoxButtons.OK);
+                        else
+                            MessageBox.Show("Thêm vào lịch sử thất bại!", "Thông báo", MessageBoxButtons.OK);
+
+                        dsdk.RemoveAt(statusNum);
+                        loadListDK(dataView1, dsdk);
+                       
+                        
+                        MessageBox.Show("Đã trả sách thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (kq == DialogResult.No)
                     {
                         dsdk.RemoveAt(statusNum);
                         loadListDK(dataView1, dsdk);
-                        MessageBox.Show("Đã xoá thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đã trả sách hành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -578,6 +715,11 @@ namespace QuanLiThuVien
             }
             statusNum = -1;
         }
+
+
+
+
+
 
         //Nút tìm kiếm
         private void btn_Search2_Click(object sender, EventArgs e)
@@ -761,54 +903,15 @@ namespace QuanLiThuVien
                 loadListDK(dataView1, dk1);
             }
         }
+      
+
+
+
+
+
 
         //Nút lưu & huỷ
 
-
-        private void tb_Genre_SelectedIndexChanged(object sender, EventArgs e)
-        {//mỗi khi chọn thể loại thì kí tự đầu sẽ tự xuất hiện dưới mã sách cho tiện lợi và cho ngta bik
-            if(statusBtn == "Search")
-            {
-                List<Sach> s1 = new List<Sach>();
-                foreach (var item in dss)
-                {
-                    if (item.Genre.Contains(tb_Genre.Text.Trim()))
-                    {
-                        s1.Add(item);
-                    }
-                }
-                loadListB(dataView2, s1);
-            }
-            else
-            {
-                string genre = tb_Genre.Text.Trim();
-                switch (genre)
-                {
-                    case "Tiểu thuyết":
-                        tb_IdB.Text = "A";
-                        break;
-                    case "Phi tiểu thuyết":
-                        tb_IdB.Text = "B";
-                        break;
-                    case "Giáo dục":
-                        tb_IdB.Text = "C";
-                        break;
-                    case "Nghệ thuật":
-                        tb_IdB.Text = "D";
-                        break;
-                    case "Thiếu nhi":
-                        tb_IdB.Text = "E";
-                        break;
-                    case "Tạp chí và báo chí":
-                        tb_IdB.Text = "F";
-                        break;
-                    default:
-                        tb_IdB.Text = "G";
-                        break;
-                }
-            }
-            
-        }
         private void btn_Save2_Click(object sender, EventArgs e)
         {
             if(statusBtn == "Add")
@@ -821,6 +924,7 @@ namespace QuanLiThuVien
                     string genre = tb_Genre.Text.Trim();
                     string author = tb_Author.Text.Trim();
                     DateTime date = dtp_DateP.Value.Date;
+                    string shelf =tb_Shelf.Text.Trim();
                     if (tb_IdB.Text.Trim().Length == 1)
                     {
                         
@@ -839,7 +943,7 @@ namespace QuanLiThuVien
                         {
                             if (tb_Amount.Text.Trim() == "1"|| tb_Amount.Text.Trim() == "")
                             {
-                                Sach sach = new Sach(id, name, genre, author, date);
+                                Sach sach = new Sach(id, name, genre, author, date,shelf);
                                 dss.Add(sach);
                                 MessageBox.Show("Đã thêm thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -851,7 +955,7 @@ namespace QuanLiThuVien
                                 for (int i = 0; i < n; i++)
                                 {
                                     id = randomId(firstChar);
-                                    Sach sach = new Sach(id, name, genre, author, date);
+                                    Sach sach = new Sach(id, name, genre, author, date,shelf);
                                     dss.Add(sach);
                                 }
                                 MessageBox.Show("Đã thêm thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -891,11 +995,17 @@ namespace QuanLiThuVien
                     }
                     else
                     {
-                        dss[statusNum].IdB = tb_IdB.Text.Trim();
+                        if (tb_IdB.Text.Length == 1)
+                        {
+                            string id = randomId(tb_IdB.Text);
+                            dss[statusNum].IdB = id;
+
+                        }else dss[statusNum].IdB = tb_IdB.Text.Trim();
                         dss[statusNum].NameB = tb_NameB.Text.Trim();
                         dss[statusNum].Genre = tb_Genre.Text.Trim();
                         dss[statusNum].Author = tb_Author.Text.Trim();
                         dss[statusNum].DateP = dtp_DateP.Value.Date;
+                        dss[statusNum].Shelf=tb_Shelf.Text.Trim();
                         loadListB(dataView2, dss);
                         MessageBox.Show("Đã sửa thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         enableBtn(false, false);
@@ -991,7 +1101,7 @@ namespace QuanLiThuVien
         {
             if (statusBtn == "Adjust")
             {
-                if (checkEmpty()) { MessageBox.Show("Có thông tin bị thiếu", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                if (checkEmpty()) { MessageBox.Show("Có thông tin bị thiếu!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 else
                 {
                     if (checkSameB())
@@ -1000,29 +1110,36 @@ namespace QuanLiThuVien
                     }
                     else
                     {
-                        if (checkExist()) { MessageBox.Show("Thông tin không tồn tại trong dữ liệu", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); } else
+                        if (checkExist()) { MessageBox.Show("Thông tin không tồn tại trong dữ liệu!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); } else
                         {
-                            dsdk[statusNum].IdB_DK = tb_IdB_DK.Text.Trim().ToUpper();
-                            dsdk[statusNum].IdTV_DK = tb_IdTV_DK.Text.Trim().ToUpper();
-                            dsdk[statusNum].NameB_DK = tb_NameB_DK.Text.Trim();
-                            dsdk[statusNum].NameTV_DK = tb_NameTV_DK.Text.Trim();
-                            dsdk[statusNum].DateS = dtp_DateS.Value.Date;
-                            dsdk[statusNum].DateE=dtp_DateE.Value.Date;
-                            loadListDK(dataView1, dsdk);
-                            MessageBox.Show("Đã sửa thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            enableBtn(false, false);
-                            enableTb(false);
-                            enableCtrl(true, true, true, true);
-                            dataView1.Enabled = true;
-                            statusBtn = "";
-                            statusNum = -1;
-                            clearTb();
+                            if (check5LanMuon(tb_IdTV_DK.Text.Trim().ToUpper())) { MessageBox.Show("Mỗi thành viên chỉ được mượn tối đa 5 cuốn!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                            else
+                            {
+                                dsdk[statusNum].IdB_DK = tb_IdB_DK.Text.Trim().ToUpper();
+                                dsdk[statusNum].IdTV_DK = tb_IdTV_DK.Text.Trim().ToUpper();
+                                dsdk[statusNum].NameB_DK = tb_NameB_DK.Text.Trim();
+                                dsdk[statusNum].NameTV_DK = tb_NameTV_DK.Text.Trim();
+                                dsdk[statusNum].DateS = dtp_DateS.Value.Date;
+                                dsdk[statusNum].DateE = dtp_DateE.Value.Date;
+                                //int soTuan = (dsdk[statusNum].DateE-dsdk[statusNum].DateS).Days;
+                                //tb_NumOfDate.Text= soTuan.ToString()+ " tuần";
+                                loadListDK(dataView1, dsdk);
+                                MessageBox.Show("Đã sửa thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                enableBtn(false, false);
+                                enableTb(false);
+                                enableCtrl(true, true, true, true);
+                                dataView1.Enabled = true;
+                                statusBtn = "";
+                                statusNum = -1;
+                                clearTb();
+                            }
+                       
                         }
                     }
                 }
             }else if (statusBtn == "Add")
             {
-                if (checkEmpty()) { MessageBox.Show("Có thông tin bị thiếu", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                if (checkEmpty()) { MessageBox.Show("Có thông tin bị thiếu!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 else
                 {
                     if (checkSameB())
@@ -1040,19 +1157,24 @@ namespace QuanLiThuVien
                         k.DateE=dtp_DateE.Value.Date;
                         if (timB(k.IdB_DK, k.NameB_DK) && timTV(k.IdTV_DK, k.NameTV_DK))
                         {
-                            dsdk.Add(k);
-                            loadListDK(dataView1, dsdk);
-                            MessageBox.Show("Đã thêm thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            enableBtn(false, false);
-                            enableTb(false);
-                            enableCtrl(true, true, true, true);
-                            dataView3.Enabled = true;
-                            statusBtn = "";
-                            clearTb();
+                            if (check5LanMuon(tb_IdTV_DK.Text.Trim().ToUpper())) { MessageBox.Show("Mỗi thành viên chỉ được mượn tối đa 5 cuốn!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                            else
+                            {
+                                dsdk.Add(k);
+                                loadListDK(dataView1, dsdk);
+                                MessageBox.Show("Đã thêm thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                enableBtn(false, false);
+                                enableTb(false);
+                                enableCtrl(true, true, true, true);
+                                dataView1.Enabled = true;
+                                statusBtn = "";
+                                clearTb();
+                            }
+                           
                         }
                         else
                         {
-                            MessageBox.Show("Kiểm tra lại thông tin! ", "Hey!", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            MessageBox.Show("Thông tin không tồn tại trong dữ liệu!", "Hey!", MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
 
                     }
@@ -1136,6 +1258,19 @@ namespace QuanLiThuVien
             }
             catch (Exception ex) { return false; }
         }
+        private bool saveFileLichSu(string filename)
+        {
+            try
+            {
+                using (Stream f = File.Open(filename, FileMode.Create))
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    bf.Serialize(f, dsls);
+                    return true;
+                }
+            }
+            catch (Exception ex) { return false; }
+        }
         private bool loadFileSach(string filename)
         {
             BinaryFormatter bf = new BinaryFormatter();
@@ -1174,7 +1309,19 @@ namespace QuanLiThuVien
             }
             else { return false; }
         }
-
+        private bool loadFileLichSu(string filename)
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            if (File.Exists(filename))
+            {
+                using (FileStream f = new FileStream(filename, FileMode.Open, System.IO.FileAccess.Read))
+                {
+                    dsls = bf.Deserialize(f) as List<DangKi>;
+                    return true;
+                }
+            }
+            else { return false; }
+        }
 
 
 
@@ -1190,6 +1337,7 @@ namespace QuanLiThuVien
                 saveFileSach("dss.bin");
                 saveFileThanhVien("dstv.bin");
                 saveFileDangKi("dsdk.bin");
+                saveFileLichSu("dsls.bin");
                 this.Close();
             }
         }//re-useable
@@ -1217,10 +1365,82 @@ namespace QuanLiThuVien
 
 
 
-        //testing
+        //testing & got lazy to rename all of this or place 'em in the right place :P
+
+        public void GETVALUE(string data1)
+        {//Lấy dữ liệu từ form thứ 2
+            tb_IdB_DK.Text = data1;
+        }
+        private void timKiemSach()
+        {
+            saveFileSach("dss.bin");
+            saveFileThanhVien("dstv.bin");
+            saveFileDangKi("dsdk.bin");
+            TimKiemSach f = new TimKiemSach();
+            f.mydata = new TimKiemSach.GETDATA(GETVALUE);
+            f.ShowDialog();
+        }
         private void tb_IdB_DK_MouseClick(object sender, MouseEventArgs e)
         {
-
+            if(statusBtn=="Add"||statusBtn=="Adjust") timKiemSach();
         }
+        private void tb_NameB_DK_Click(object sender, EventArgs e)
+        {
+            if (statusBtn == "Add" || statusBtn == "Adjust") timKiemSach();
+        }
+
+
+
+
+        public void GETVALUE1(string data1)
+        {//Lấy dữ liệu từ form thứ 3
+            tb_IdTV_DK.Text = data1;
+        }
+        private void timKiemTV()
+        {
+
+            saveFileSach("dss.bin");
+            saveFileThanhVien("dstv.bin");
+            saveFileDangKi("dsdk.bin");
+            TimKiemTV b = new TimKiemTV();
+            b.mydata = new TimKiemTV.GETDATA(GETVALUE1);
+            b.ShowDialog();
+        }
+        private void tb_IdTV_DK_Click(object sender, EventArgs e)
+        {
+            if (statusBtn == "Add" || statusBtn == "Adjust") timKiemTV();
+        }
+        private void tb_NameTV_DK_Click(object sender, EventArgs e)
+        {
+            if (statusBtn == "Add" || statusBtn == "Adjust") timKiemTV();
+        }
+
+        private void tb_IdTV_LS_TextChanged(object sender, EventArgs e)
+        {
+            List<DangKi> dk1 = new List<DangKi>();
+            foreach (var item in dsls)
+            {
+                if (item.IdTV_DK.Contains(tb_IdTV_LS.Text.Trim().ToUpper()))
+                {
+                    dk1.Add(item);
+                }
+            }
+            loadListDK(dataView4, dk1);
+        }
+
+        private void tb_IdB_LS_TextChanged(object sender, EventArgs e)
+        {
+            List<DangKi> dk1 = new List<DangKi>();
+            foreach (var item in dsls)
+            {
+                if (item.IdB_DK.Contains(tb_IdB_LS.Text.Trim().ToUpper()))
+                {
+                    dk1.Add(item);
+                }
+            }
+            loadListDK(dataView4, dk1);
+        }
+
+       
     }
 }

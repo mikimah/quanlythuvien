@@ -8,3 +8,5 @@ E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.csproj.GenerateResource.cache
 E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.csproj.CoreCompileInputs.cache
 E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.exe
 E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.pdb
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.TimKiemSach.resources
+E:\c++\QuanLiThuVien\obj\Debug\QuanLiThuVien.TimKiemTV.resources

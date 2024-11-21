@@ -63,6 +63,12 @@
     <Compile Include="TimKiemSach.Designer.cs">
       <DependentUpon>TimKiemSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimKiemTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimKiemTV.Designer.cs">
+      <DependentUpon>TimKiemTV.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -77,6 +83,9 @@
     </Compile>
     <EmbeddedResource Include="TimKiemSach.resx">
       <DependentUpon>TimKiemSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimKiemTV.resx">
+      <DependentUpon>TimKiemTV.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -30,22 +30,16 @@
         {
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btn_Exit3 = new System.Windows.Forms.Button();
-            this.dataView4 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tb_IdTV_LS = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tb_IdB_LS = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btn_Exit2 = new System.Windows.Forms.Button();
             this.dataView2 = new System.Windows.Forms.DataGridView();
-            this.colIdB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNameB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDateP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel19 = new System.Windows.Forms.FlowLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
@@ -140,8 +134,23 @@
             this.flowLayoutPanel17 = new System.Windows.Forms.FlowLayoutPanel();
             this.label17 = new System.Windows.Forms.Label();
             this.tb_NameB_DK = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel21 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tb_Shelf = new System.Windows.Forms.ComboBox();
+            this.colIdB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNameB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAuthor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDateP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colShelf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataView4)).BeginInit();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel13.SuspendLayout();
             this.flowLayoutPanel12.SuspendLayout();
@@ -173,12 +182,14 @@
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel16.SuspendLayout();
             this.flowLayoutPanel17.SuspendLayout();
+            this.flowLayoutPanel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataView4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btn_Exit3);
             this.tabPage3.Controls.Add(this.dataView4);
+            this.tabPage3.Controls.Add(this.btn_Exit3);
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -199,16 +210,6 @@
             this.btn_Exit3.UseVisualStyleBackColor = true;
             this.btn_Exit3.Click += new System.EventHandler(this.btn_Exit3_Click);
             // 
-            // dataView4
-            // 
-            this.dataView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataView4.Location = new System.Drawing.Point(6, 120);
-            this.dataView4.Name = "dataView4";
-            this.dataView4.RowHeadersWidth = 51;
-            this.dataView4.RowTemplate.Height = 24;
-            this.dataView4.Size = new System.Drawing.Size(1081, 340);
-            this.dataView4.TabIndex = 1;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.flowLayoutPanel13);
@@ -221,7 +222,7 @@
             // flowLayoutPanel13
             // 
             this.flowLayoutPanel13.Controls.Add(this.label13);
-            this.flowLayoutPanel13.Controls.Add(this.textBox10);
+            this.flowLayoutPanel13.Controls.Add(this.tb_IdTV_LS);
             this.flowLayoutPanel13.Location = new System.Drawing.Point(108, 36);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
             this.flowLayoutPanel13.Size = new System.Drawing.Size(324, 36);
@@ -237,17 +238,18 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "MSSV:";
             // 
-            // textBox10
+            // tb_IdTV_LS
             // 
-            this.textBox10.Location = new System.Drawing.Point(70, 3);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(241, 22);
-            this.textBox10.TabIndex = 1;
+            this.tb_IdTV_LS.Location = new System.Drawing.Point(70, 3);
+            this.tb_IdTV_LS.Name = "tb_IdTV_LS";
+            this.tb_IdTV_LS.Size = new System.Drawing.Size(241, 22);
+            this.tb_IdTV_LS.TabIndex = 1;
+            this.tb_IdTV_LS.TextChanged += new System.EventHandler(this.tb_IdTV_LS_TextChanged);
             // 
             // flowLayoutPanel12
             // 
             this.flowLayoutPanel12.Controls.Add(this.label12);
-            this.flowLayoutPanel12.Controls.Add(this.textBox8);
+            this.flowLayoutPanel12.Controls.Add(this.tb_IdB_LS);
             this.flowLayoutPanel12.Location = new System.Drawing.Point(652, 39);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
             this.flowLayoutPanel12.Size = new System.Drawing.Size(324, 36);
@@ -263,12 +265,13 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Mã sách:";
             // 
-            // textBox8
+            // tb_IdB_LS
             // 
-            this.textBox8.Location = new System.Drawing.Point(87, 3);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(225, 22);
-            this.textBox8.TabIndex = 1;
+            this.tb_IdB_LS.Location = new System.Drawing.Point(87, 3);
+            this.tb_IdB_LS.Name = "tb_IdB_LS";
+            this.tb_IdB_LS.Size = new System.Drawing.Size(225, 22);
+            this.tb_IdB_LS.TabIndex = 1;
+            this.tb_IdB_LS.TextChanged += new System.EventHandler(this.tb_IdB_LS_TextChanged);
             // 
             // tabPage2
             // 
@@ -302,7 +305,8 @@
             this.colNameB,
             this.colGenre,
             this.colAuthor,
-            this.colDateP});
+            this.colDateP,
+            this.colShelf});
             this.dataView2.Location = new System.Drawing.Point(8, 222);
             this.dataView2.Name = "dataView2";
             this.dataView2.ReadOnly = true;
@@ -313,53 +317,9 @@
             this.dataView2.TabIndex = 44;
             this.dataView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataView2_CellClick);
             // 
-            // colIdB
-            // 
-            this.colIdB.DataPropertyName = "IdB";
-            this.colIdB.HeaderText = "Mã sách";
-            this.colIdB.MinimumWidth = 6;
-            this.colIdB.Name = "colIdB";
-            this.colIdB.ReadOnly = true;
-            this.colIdB.Width = 125;
-            // 
-            // colNameB
-            // 
-            this.colNameB.DataPropertyName = "NameB";
-            this.colNameB.HeaderText = "Tên sách";
-            this.colNameB.MinimumWidth = 6;
-            this.colNameB.Name = "colNameB";
-            this.colNameB.ReadOnly = true;
-            this.colNameB.Width = 150;
-            // 
-            // colGenre
-            // 
-            this.colGenre.DataPropertyName = "Genre";
-            this.colGenre.HeaderText = "Thể loại";
-            this.colGenre.MinimumWidth = 6;
-            this.colGenre.Name = "colGenre";
-            this.colGenre.ReadOnly = true;
-            this.colGenre.Width = 125;
-            // 
-            // colAuthor
-            // 
-            this.colAuthor.DataPropertyName = "Author";
-            this.colAuthor.HeaderText = "Tác giả";
-            this.colAuthor.MinimumWidth = 6;
-            this.colAuthor.Name = "colAuthor";
-            this.colAuthor.ReadOnly = true;
-            this.colAuthor.Width = 150;
-            // 
-            // colDateP
-            // 
-            this.colDateP.DataPropertyName = "DateP";
-            this.colDateP.HeaderText = "Ngày xuất bản";
-            this.colDateP.MinimumWidth = 6;
-            this.colDateP.Name = "colDateP";
-            this.colDateP.ReadOnly = true;
-            this.colDateP.Width = 130;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.flowLayoutPanel21);
             this.panel2.Controls.Add(this.flowLayoutPanel19);
             this.panel2.Controls.Add(this.btn_Cancel2);
             this.panel2.Controls.Add(this.btn_Save2);
@@ -438,7 +398,7 @@
             // 
             // btn_Search2
             // 
-            this.btn_Search2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Search2.Location = new System.Drawing.Point(860, 66);
             this.btn_Search2.Name = "btn_Search2";
             this.btn_Search2.Size = new System.Drawing.Size(93, 40);
@@ -1093,7 +1053,7 @@
             this.flowLayoutPanel20.Controls.Add(this.tb_NumOfDate);
             this.flowLayoutPanel20.Location = new System.Drawing.Point(435, 20);
             this.flowLayoutPanel20.Name = "flowLayoutPanel20";
-            this.flowLayoutPanel20.Size = new System.Drawing.Size(224, 36);
+            this.flowLayoutPanel20.Size = new System.Drawing.Size(266, 36);
             this.flowLayoutPanel20.TabIndex = 49;
             // 
             // label21
@@ -1117,7 +1077,7 @@
             "3 tuần"});
             this.tb_NumOfDate.Location = new System.Drawing.Point(137, 3);
             this.tb_NumOfDate.Name = "tb_NumOfDate";
-            this.tb_NumOfDate.Size = new System.Drawing.Size(45, 24);
+            this.tb_NumOfDate.Size = new System.Drawing.Size(91, 24);
             this.tb_NumOfDate.TabIndex = 44;
             this.tb_NumOfDate.SelectedIndexChanged += new System.EventHandler(this.tb_NumOfDate_SelectedIndexChanged);
             // 
@@ -1243,6 +1203,7 @@
             this.tb_NameTV_DK.Name = "tb_NameTV_DK";
             this.tb_NameTV_DK.Size = new System.Drawing.Size(232, 22);
             this.tb_NameTV_DK.TabIndex = 1;
+            this.tb_NameTV_DK.Click += new System.EventHandler(this.tb_NameTV_DK_Click);
             this.tb_NameTV_DK.TextChanged += new System.EventHandler(this.tb_NameTV_DK_TextChanged);
             // 
             // flowLayoutPanel18
@@ -1299,6 +1260,7 @@
             this.tb_IdTV_DK.Name = "tb_IdTV_DK";
             this.tb_IdTV_DK.Size = new System.Drawing.Size(226, 22);
             this.tb_IdTV_DK.TabIndex = 1;
+            this.tb_IdTV_DK.Click += new System.EventHandler(this.tb_IdTV_DK_Click);
             this.tb_IdTV_DK.TextChanged += new System.EventHandler(this.tb_IdTV_DK_TextChanged);
             // 
             // flowLayoutPanel16
@@ -1356,7 +1318,181 @@
             this.tb_NameB_DK.Name = "tb_NameB_DK";
             this.tb_NameB_DK.Size = new System.Drawing.Size(232, 22);
             this.tb_NameB_DK.TabIndex = 1;
+            this.tb_NameB_DK.Click += new System.EventHandler(this.tb_NameB_DK_Click);
             this.tb_NameB_DK.TextChanged += new System.EventHandler(this.tb_NameB_DK_TextChanged);
+            // 
+            // flowLayoutPanel21
+            // 
+            this.flowLayoutPanel21.Controls.Add(this.label22);
+            this.flowLayoutPanel21.Controls.Add(this.tb_Shelf);
+            this.flowLayoutPanel21.Location = new System.Drawing.Point(15, 150);
+            this.flowLayoutPanel21.Name = "flowLayoutPanel21";
+            this.flowLayoutPanel21.Size = new System.Drawing.Size(177, 36);
+            this.flowLayoutPanel21.TabIndex = 44;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(3, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(81, 20);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Giá sách:";
+            // 
+            // tb_Shelf
+            // 
+            this.tb_Shelf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tb_Shelf.Enabled = false;
+            this.tb_Shelf.FormattingEnabled = true;
+            this.tb_Shelf.Items.AddRange(new object[] {
+            "A1",
+            "A2",
+            "B1",
+            "B2",
+            "C1",
+            "C2",
+            "D1",
+            "D2",
+            "E1",
+            "E2",
+            "F1",
+            "F2",
+            "G1",
+            "G2"});
+            this.tb_Shelf.Location = new System.Drawing.Point(90, 3);
+            this.tb_Shelf.Name = "tb_Shelf";
+            this.tb_Shelf.Size = new System.Drawing.Size(61, 24);
+            this.tb_Shelf.TabIndex = 1;
+            this.tb_Shelf.SelectedIndexChanged += new System.EventHandler(this.tb_Shelf_SelectedIndexChanged);
+            // 
+            // colIdB
+            // 
+            this.colIdB.DataPropertyName = "IdB";
+            this.colIdB.HeaderText = "Mã sách";
+            this.colIdB.MinimumWidth = 6;
+            this.colIdB.Name = "colIdB";
+            this.colIdB.ReadOnly = true;
+            this.colIdB.Width = 125;
+            // 
+            // colNameB
+            // 
+            this.colNameB.DataPropertyName = "NameB";
+            this.colNameB.HeaderText = "Tên sách";
+            this.colNameB.MinimumWidth = 6;
+            this.colNameB.Name = "colNameB";
+            this.colNameB.ReadOnly = true;
+            this.colNameB.Width = 150;
+            // 
+            // colGenre
+            // 
+            this.colGenre.DataPropertyName = "Genre";
+            this.colGenre.HeaderText = "Thể loại";
+            this.colGenre.MinimumWidth = 6;
+            this.colGenre.Name = "colGenre";
+            this.colGenre.ReadOnly = true;
+            this.colGenre.Width = 125;
+            // 
+            // colAuthor
+            // 
+            this.colAuthor.DataPropertyName = "Author";
+            this.colAuthor.HeaderText = "Tác giả";
+            this.colAuthor.MinimumWidth = 6;
+            this.colAuthor.Name = "colAuthor";
+            this.colAuthor.ReadOnly = true;
+            this.colAuthor.Width = 150;
+            // 
+            // colDateP
+            // 
+            this.colDateP.DataPropertyName = "DateP";
+            this.colDateP.HeaderText = "Ngày xuất bản";
+            this.colDateP.MinimumWidth = 6;
+            this.colDateP.Name = "colDateP";
+            this.colDateP.ReadOnly = true;
+            this.colDateP.Width = 130;
+            // 
+            // colShelf
+            // 
+            this.colShelf.DataPropertyName = "Shelf";
+            this.colShelf.HeaderText = "Giá sách";
+            this.colShelf.MinimumWidth = 6;
+            this.colShelf.Name = "colShelf";
+            this.colShelf.ReadOnly = true;
+            this.colShelf.Width = 125;
+            // 
+            // dataView4
+            // 
+            this.dataView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
+            this.dataView4.Location = new System.Drawing.Point(8, 120);
+            this.dataView4.MultiSelect = false;
+            this.dataView4.Name = "dataView4";
+            this.dataView4.ReadOnly = true;
+            this.dataView4.RowHeadersWidth = 51;
+            this.dataView4.RowTemplate.Height = 24;
+            this.dataView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataView4.Size = new System.Drawing.Size(1079, 340);
+            this.dataView4.TabIndex = 45;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdB_DK";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã sách";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "IdTV_DK";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Mã thành viên";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NameB_DK";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tên sách";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NameTV_DK";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tên thành viên";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DateS";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Ngày mượn";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DateE";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Ngày trả";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // Form1
             // 
@@ -1370,7 +1506,6 @@
             this.Text = "Quản lý thư viên";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataView4)).EndInit();
             this.panel3.ResumeLayout(false);
             this.flowLayoutPanel13.ResumeLayout(false);
             this.flowLayoutPanel13.PerformLayout();
@@ -1422,6 +1557,9 @@
             this.flowLayoutPanel16.PerformLayout();
             this.flowLayoutPanel17.ResumeLayout(false);
             this.flowLayoutPanel17.PerformLayout();
+            this.flowLayoutPanel21.ResumeLayout(false);
+            this.flowLayoutPanel21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1430,14 +1568,13 @@
 
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btn_Exit3;
-        private System.Windows.Forms.DataGridView dataView4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel13;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tb_IdTV_LS;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tb_IdB_LS;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Exit2;
@@ -1489,11 +1626,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_addressM;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIdB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNameB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGenre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDateP;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIdM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNameM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colClassM;
@@ -1540,6 +1672,22 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox tb_NumOfDate;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox tb_Shelf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNameB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colGenre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAuthor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDateP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colShelf;
+        private System.Windows.Forms.DataGridView dataView4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
 

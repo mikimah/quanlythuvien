@@ -15,6 +15,7 @@ namespace QuanLiThuVien
         private string genre;
         private string author;
         private DateTime dateP;
+        private string shelf;
 
         public Sach()
         {
@@ -23,15 +24,17 @@ namespace QuanLiThuVien
             this.genre = "";
             this.author = "";
             this.dateP = DateTime.Now;
+            this.shelf = "";
         }
 
-        public Sach(string id, string name, string genre, string author, DateTime dateP)
+        public Sach(string id, string name, string genre, string author, DateTime dateP,string shelf)
         {
             this.idB = id;
             this.nameB = name;
             this.genre = genre;
             this.author = author;
             this.dateP = dateP;
+            this.shelf= shelf;
         }
         public string IdB
         {
@@ -57,6 +60,11 @@ namespace QuanLiThuVien
         {
             get { return dateP; }
             set { dateP = value; }
+        }
+        public string Shelf
+        {
+            get { return shelf; }
+            set { shelf = value; }
         }
     }
 }
