@@ -32,15 +32,16 @@ namespace QuanLiThuVien
 
         private void Form1_Load(object sender, EventArgs e)
         {
-         
+
             loadFileSach("dss.bin");
             loadFileThanhVien("dstv.bin");
             loadFileDangKi("dsdk.bin");
             loadFileLichSu("dsls.bin");
             loadListB(dataView2, dss);
-            loadListM(dataView3,dstv);
+            loadListM(dataView3, dstv);
             loadListDK(dataView1, dsdk);
             loadListDK(dataView4, dsls);
+            quaHanTra();
 
         }
 
@@ -62,54 +63,63 @@ namespace QuanLiThuVien
 
         //Chức năng phụ
         void enableTb(bool enable)
-        { 
+        {
             //Bật tắt textbox
             int num = tabControl1.SelectedIndex;//Dùng được nhiều lần dựa vào thứ tự tab
             if (num == 1)
             {
-                tb_IdB.Enabled = tb_NameB.Enabled = tb_Genre.Enabled = tb_Author.Enabled = dtp_DateP.Enabled = tb_Amount.Enabled=tb_Shelf.Enabled = enable;
-            }else if(num ==2)
+                tb_IdB.Enabled = tb_NameB.Enabled = tb_Genre.Enabled = tb_Author.Enabled = dtp_DateP.Enabled = tb_Amount.Enabled = tb_Shelf.Enabled = enable;
+            }
+            else if (num == 2)
             {
                 tb_idM.Enabled = tb_nameM.Enabled = tb_classM.Enabled = tb_phoneM.Enabled = tb_addressM.Enabled = enable;
-            }else if (num == 0)
+            }
+            else if (num == 0)
             {
-                tb_IdB_DK.Enabled=tb_IdTV_DK.Enabled=tb_NameB_DK.Enabled=tb_NameTV_DK.Enabled=tb_NumOfDate.Enabled=enable;
+                tb_IdB_DK.Enabled = tb_IdTV_DK.Enabled = tb_NameB_DK.Enabled = tb_NameTV_DK.Enabled = tb_NumOfDate.Enabled = enable;
             }
         }//re-usable
-        void enableBtn(bool enable1, bool enable2) {
+        void enableBtn(bool enable1, bool enable2)
+        {
             //Bật tắt nút Lưu & Huỷ
-            int num = tabControl1.SelectedIndex ;
-            if (num == 1) {
+            int num = tabControl1.SelectedIndex;
+            if (num == 1)
+            {
                 btn_Save2.Enabled = enable1;
                 btn_Cancel2.Enabled = enable2;
             }
-            else if(num==2)
+            else if (num == 2)
             {
                 btn_Save3.Enabled = enable1;
                 btn_Cancel3.Enabled = enable2;
-            }else if (num == 0)
+            }
+            else if (num == 0)
             {
                 btn_Save1.Enabled = enable1;
                 btn_Cancel1.Enabled = enable2;
             }
 
         }//re-usaeble
-        void enableCtrl(bool a1, bool a2, bool a3, bool a4) {
+        void enableCtrl(bool a1, bool a2, bool a3, bool a4)
+        {
             //Bật tắt nút Thêm Xoá Sửa Tìm kiếm
             int num = tabControl1.SelectedIndex;
             if (num == 1)
-            { btn_Add2.Enabled = a1;
+            {
+                btn_Add2.Enabled = a1;
                 btn_Adjust2.Enabled = a2;
                 btn_Search2.Enabled = a3;
                 btn_Delete2.Enabled = a4;
-            }else if(num == 2)
+            }
+            else if (num == 2)
             {
                 btn_Add3.Enabled = a1;
                 btn_Adjust3.Enabled = a2;
                 btn_Search3.Enabled = a3;
                 btn_Delete3.Enabled = a4;
 
-            }else if (num == 0)
+            }
+            else if (num == 0)
             {
                 btn_Add1.Enabled = a1;
                 btn_Adjust1.Enabled = a2;
@@ -153,7 +163,7 @@ namespace QuanLiThuVien
             int num = tabControl1.SelectedIndex;
             if (num == 1)
             {
-                if (tb_NameB.Text == "" || tb_Genre.Text == "" || tb_Author.Text == ""||tb_IdB.Text==""||tb_Shelf.Text=="")
+                if (tb_NameB.Text == "" || tb_Genre.Text == "" || tb_Author.Text == "" || tb_IdB.Text == "" || tb_Shelf.Text == "")
                 {
                     return true;
                 }
@@ -182,18 +192,19 @@ namespace QuanLiThuVien
                         return true;
                     }
                 }
-              
+
             }
             return false;
         }//re-useable
         bool checkLength(string id)
         {//Kiểm tra độ dài của mã số
             int num = tabControl1.SelectedIndex;
-            switch (num){
+            switch (num)
+            {
                 case 1:
                     if (id.Length == 7)
                     {   //got lazy :P
-                        if(id.Substring(0,1)=="A"|| id.Substring(0, 1) == "B"|| id.Substring(0, 1) == "C"|| id.Substring(0, 1) == "D"|| id.Substring(0, 1) == "E"|| id.Substring(0, 1) == "F"|| id.Substring(0, 1) == "G")
+                        if (id.Substring(0, 1) == "A" || id.Substring(0, 1) == "B" || id.Substring(0, 1) == "C" || id.Substring(0, 1) == "D" || id.Substring(0, 1) == "E" || id.Substring(0, 1) == "F" || id.Substring(0, 1) == "G")
                         {
                             return true;
                         }
@@ -201,26 +212,27 @@ namespace QuanLiThuVien
                     }
                     return false;
                 case 2:
-                    if(id.Length == 10)
+                    if (id.Length == 10)
                     {
-                        if(id.Substring(0,2)=="DH") return true;
-                    }return false;
+                        if (id.Substring(0, 2) == "DH") return true;
+                    }
+                    return false;
                 default:
                     return false;
             }
-            
+
         }// re-useable
-        bool checkGenre(string id,string genre)
+        bool checkGenre(string id, string genre)
         {
             //kiểm tra xem thể loại có đúng với cái kí tự đầu hay ko *phòng trường hợp*
             string firstLetter = id.Substring(0, 1);
             switch (firstLetter)
             {
                 case "A":
-                    if(genre== "Tiểu thuyết") { return true; }
+                    if (genre == "Tiểu thuyết") { return true; }
                     return false;
                 case "B":
-                    if(genre == "Phi tiểu thuyết")return true;
+                    if (genre == "Phi tiểu thuyết") return true;
                     return false;
                 case "C":
                     if (genre == "Giáo dục") return true;
@@ -337,6 +349,14 @@ namespace QuanLiThuVien
                 tb_NameTV_DK.Text = "";
                 tb_NumOfDate.Text = "1 tuần";
             }
+            else if (num == 3)
+            {
+                tb_IdTV_LS.Text = "";
+                tb_IdB_LS.Text = "";
+                dtpStartSearch.Value = DateTime.Now;
+                dtpEndSearch.Value = DateTime.Now;
+            }
+
 
         }//re-useable
         private void tb_NumOfDate_SelectedIndexChanged(object sender, EventArgs e)
@@ -349,7 +369,7 @@ namespace QuanLiThuVien
                 dtp_DateE.Value = dt.AddDays(num);
 
             }
-            
+
         }
         private void tb_Genre_SelectedIndexChanged(object sender, EventArgs e)
         {//mỗi khi chọn thể loại thì kí tự đầu sẽ tự xuất hiện dưới mã sách cho tiện lợi và cho ngta bik
@@ -429,7 +449,7 @@ namespace QuanLiThuVien
         private bool check5LanMuon(string id)
         {
             int num = 0;
-            foreach(var item in dsdk)
+            foreach (var item in dsdk)
             {
                 if (item.IdTV_DK == id) num++;
             }
@@ -487,12 +507,12 @@ namespace QuanLiThuVien
             if (statusBtn == "Search")
             {
                 int searchNum = e.RowIndex;
-                for(int i = 0; i < dss.Count; i++)
+                for (int i = 0; i < dss.Count; i++)
                 {
                     if (dss[i].IdB == dataView2.Rows[searchNum].Cells[0].Value.ToString()) statusNum = i;
                 }
             }
-            else { statusNum = e.RowIndex; }  
+            else { statusNum = e.RowIndex; }
         }
         private void dataView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -508,7 +528,7 @@ namespace QuanLiThuVien
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(statusBtn == "Search")
+            if (statusBtn == "Search")
             {
                 int searchNum = e.RowIndex;
                 for (int i = 0; i < dsdk.Count; i++)
@@ -520,7 +540,7 @@ namespace QuanLiThuVien
         }
         private void btn_Adjust2_Click(object sender, EventArgs e)
         {
-            if (statusNum <0)
+            if (statusNum < 0)
             {
                 MessageBox.Show("Hãy chọn 1 đối tượng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -544,7 +564,7 @@ namespace QuanLiThuVien
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Something went wrong!","Hey!Look!Listen!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Something went wrong!", "Hey!Look!Listen!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     clearTb();
                     enableBtn(false, false);
                     enableTb(false);
@@ -572,8 +592,8 @@ namespace QuanLiThuVien
                     tb_idM.Enabled = false;
                     enableCtrl(false, true, false, false);
                     tb_idM.Text = dstv[statusNum].IdTV;
-                    tb_nameM.Text=dstv[statusNum].NameTV;
-                    tb_classM.Text=dstv[statusNum].ClassTV;
+                    tb_nameM.Text = dstv[statusNum].NameTV;
+                    tb_classM.Text = dstv[statusNum].ClassTV;
                     tb_phoneM.Text = dstv[statusNum].Phone;
                     tb_addressM.Text = dstv[statusNum].Address;
                     dataView3.Enabled = false;
@@ -652,7 +672,8 @@ namespace QuanLiThuVien
                         MessageBox.Show("Đã xoá thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Something went wrong!", "Hey!Look!Listen!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -691,14 +712,17 @@ namespace QuanLiThuVien
                     if (kq == DialogResult.Yes)
                     {
                         if (themls(statusNum) == true)
-                            MessageBox.Show("Thêm vào lịch sử thành công!", "Thông báo", MessageBoxButtons.OK);
+                            MessageBox.Show("Thêm vào lịch sử thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         else
-                            MessageBox.Show("Thêm vào lịch sử thất bại!", "Thông báo", MessageBoxButtons.OK);
-
+                            MessageBox.Show("Thêm vào lịch sử thất bại!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dsdk.RemoveAt(statusNum);
+                        List<DangKi> test = new List<DangKi>();
+                        foreach (var item in dsdk)
+                        {
+                            if (item.DateE < DateTime.Now) test.Add(item);
+                        }
+                        loadListDK(dataView5, test);
                         loadListDK(dataView1, dsdk);
-                       
-                        
                         MessageBox.Show("Đã trả sách thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else if (kq == DialogResult.No)
@@ -729,7 +753,7 @@ namespace QuanLiThuVien
             tb_Author.Enabled = true;
             tb_Genre.Enabled = true;
             statusBtn = "Search";
-            
+
             enableBtn(false, true);
         }
         private void btn_Search3_Click(object sender, EventArgs e)
@@ -753,7 +777,7 @@ namespace QuanLiThuVien
             if (statusBtn == "Search")
             {
                 List<Sach> s1 = new List<Sach>();
-                foreach(var item in dss)
+                foreach (var item in dss)
                 {
                     if (item.IdB.Contains(tb_IdB.Text.Trim().ToUpper()))
                     {
@@ -795,26 +819,28 @@ namespace QuanLiThuVien
         }
         private void tb_IdB_DK_TextChanged(object sender, EventArgs e)
         {
-            if(statusBtn == "Search")
+            if (statusBtn == "Search")
             {
                 List<DangKi> dk1 = new List<DangKi>();
-                foreach(var item in dsdk)
+                foreach (var item in dsdk)
                 {
                     if (item.IdB_DK.Contains(tb_IdB_DK.Text.Trim().ToUpper()))
                     {
                         dk1.Add(item);
                     }
-                }loadListDK(dataView1, dk1);
-            }else if(statusBtn == "Add")
+                }
+                loadListDK(dataView1, dk1);
+            }
+            else if (statusBtn == "Add")
             {
                 foreach (var item in dss)
                 {
-                    if (item.IdB==tb_IdB_DK.Text.Trim().ToUpper())
+                    if (item.IdB == tb_IdB_DK.Text.Trim().ToUpper())
                     {
                         tb_NameB_DK.Text = item.NameB;
                     }
                 }
-                
+
             }
         }
         private void tb_IdTV_DK_TextChanged(object sender, EventArgs e)
@@ -903,7 +929,7 @@ namespace QuanLiThuVien
                 loadListDK(dataView1, dk1);
             }
         }
-      
+
 
 
 
@@ -914,7 +940,7 @@ namespace QuanLiThuVien
 
         private void btn_Save2_Click(object sender, EventArgs e)
         {
-            if(statusBtn == "Add")
+            if (statusBtn == "Add")
             {
                 if (!checkEmpty())
                 {
@@ -924,26 +950,26 @@ namespace QuanLiThuVien
                     string genre = tb_Genre.Text.Trim();
                     string author = tb_Author.Text.Trim();
                     DateTime date = dtp_DateP.Value.Date;
-                    string shelf =tb_Shelf.Text.Trim();
+                    string shelf = tb_Shelf.Text.Trim();
                     if (tb_IdB.Text.Trim().Length == 1)
                     {
-                        
+
                         id = randomId(firstChar);
-                       
+
                     }
                     else
                     {
                         id = tb_IdB.Text.Trim();
-                        
+
                     }
-                
-                    if (checkLength(id)&&checkGenre(id,genre))
+
+                    if (checkLength(id) && checkGenre(id, genre))
                     {
                         if (!checkSameB())
                         {
-                            if (tb_Amount.Text.Trim() == "1"|| tb_Amount.Text.Trim() == "")
+                            if (tb_Amount.Text.Trim() == "1" || tb_Amount.Text.Trim() == "")
                             {
-                                Sach sach = new Sach(id, name, genre, author, date,shelf);
+                                Sach sach = new Sach(id, name, genre, author, date, shelf);
                                 dss.Add(sach);
                                 MessageBox.Show("Đã thêm thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -955,7 +981,7 @@ namespace QuanLiThuVien
                                 for (int i = 0; i < n; i++)
                                 {
                                     id = randomId(firstChar);
-                                    Sach sach = new Sach(id, name, genre, author, date,shelf);
+                                    Sach sach = new Sach(id, name, genre, author, date, shelf);
                                     dss.Add(sach);
                                 }
                                 MessageBox.Show("Đã thêm thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -977,11 +1003,12 @@ namespace QuanLiThuVien
                     {
                         MessageBox.Show("Mã sách phải 7 kí tự và phải có 1 kí tự từ A đến G!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
+
                 }
-                else { MessageBox.Show("Có thông tin bị thiếu","Hey!",MessageBoxButtons.OK, MessageBoxIcon.Error); }
-               
-            }else if(statusBtn == "Adjust")
+                else { MessageBox.Show("Có thông tin bị thiếu", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+            }
+            else if (statusBtn == "Adjust")
             {
                 if (checkEmpty())
                 {
@@ -1000,26 +1027,27 @@ namespace QuanLiThuVien
                             string id = randomId(tb_IdB.Text);
                             dss[statusNum].IdB = id;
 
-                        }else dss[statusNum].IdB = tb_IdB.Text.Trim();
+                        }
+                        else dss[statusNum].IdB = tb_IdB.Text.Trim();
                         dss[statusNum].NameB = tb_NameB.Text.Trim();
                         dss[statusNum].Genre = tb_Genre.Text.Trim();
                         dss[statusNum].Author = tb_Author.Text.Trim();
                         dss[statusNum].DateP = dtp_DateP.Value.Date;
-                        dss[statusNum].Shelf=tb_Shelf.Text.Trim();
+                        dss[statusNum].Shelf = tb_Shelf.Text.Trim();
                         loadListB(dataView2, dss);
                         MessageBox.Show("Đã sửa thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         enableBtn(false, false);
                         enableTb(false);
                         enableCtrl(true, true, true, true);
                         dataView2.Enabled = true;
-                      
+
                         statusBtn = "";
                         statusNum = -1;
                         clearTb();
                     }
-                  
+
                 }
-              
+
 
             }
 
@@ -1063,7 +1091,8 @@ namespace QuanLiThuVien
                             MessageBox.Show("Mã thành viên bị trùng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }else if(statusBtn == "Adjust")
+            }
+            else if (statusBtn == "Adjust")
             {
                 if (checkEmpty())
                 {
@@ -1077,11 +1106,11 @@ namespace QuanLiThuVien
                     }
                     else
                     {
-                        dstv[statusNum].IdTV=tb_idM.Text.Trim();
-                        dstv[statusNum].NameTV=tb_nameM.Text.Trim();
-                        dstv[statusNum].ClassTV=tb_classM.Text.Trim();
-                        dstv[statusNum].Phone=tb_phoneM.Text.Trim();
-                        dstv[statusNum].Address=tb_addressM.Text.Trim();
+                        dstv[statusNum].IdTV = tb_idM.Text.Trim();
+                        dstv[statusNum].NameTV = tb_nameM.Text.Trim();
+                        dstv[statusNum].ClassTV = tb_classM.Text.Trim();
+                        dstv[statusNum].Phone = tb_phoneM.Text.Trim();
+                        dstv[statusNum].Address = tb_addressM.Text.Trim();
                         loadListM(dataView3, dstv);
                         MessageBox.Show("Đã sửa thành công!", "Hey!Look!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         enableBtn(false, false);
@@ -1110,7 +1139,8 @@ namespace QuanLiThuVien
                     }
                     else
                     {
-                        if (checkExist()) { MessageBox.Show("Thông tin không tồn tại trong dữ liệu!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); } else
+                        if (checkExist()) { MessageBox.Show("Thông tin không tồn tại trong dữ liệu!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                        else
                         {
                             if (check5LanMuon(tb_IdTV_DK.Text.Trim().ToUpper())) { MessageBox.Show("Mỗi thành viên chỉ được mượn tối đa 5 cuốn!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                             else
@@ -1133,18 +1163,19 @@ namespace QuanLiThuVien
                                 statusNum = -1;
                                 clearTb();
                             }
-                       
+
                         }
                     }
                 }
-            }else if (statusBtn == "Add")
+            }
+            else if (statusBtn == "Add")
             {
                 if (checkEmpty()) { MessageBox.Show("Có thông tin bị thiếu!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 else
                 {
                     if (checkSameB())
-                        {
-                            MessageBox.Show("Cuốn sách này đã có người mượn!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    {
+                        MessageBox.Show("Cuốn sách này đã có người mượn!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
@@ -1154,7 +1185,7 @@ namespace QuanLiThuVien
                         k.NameB_DK = tb_NameB_DK.Text.Trim();
                         k.NameTV_DK = tb_NameTV_DK.Text.Trim();
                         k.DateS = dtp_DateS.Value.Date;
-                        k.DateE=dtp_DateE.Value.Date;
+                        k.DateE = dtp_DateE.Value.Date;
                         if (timB(k.IdB_DK, k.NameB_DK) && timTV(k.IdTV_DK, k.NameTV_DK))
                         {
                             if (check5LanMuon(tb_IdTV_DK.Text.Trim().ToUpper())) { MessageBox.Show("Mỗi thành viên chỉ được mượn tối đa 5 cuốn!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -1170,11 +1201,11 @@ namespace QuanLiThuVien
                                 statusBtn = "";
                                 clearTb();
                             }
-                           
+
                         }
                         else
                         {
-                            MessageBox.Show("Thông tin không tồn tại trong dữ liệu!", "Hey!", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            MessageBox.Show("Thông tin không tồn tại trong dữ liệu!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
                     }
@@ -1186,19 +1217,21 @@ namespace QuanLiThuVien
             int num = tabControl1.SelectedIndex;
             enableBtn(false, false);
             enableTb(false);
-            enableCtrl(true,true,true,true);
+            enableCtrl(true, true, true, true);
             if (num == 1)
             {
                 dataView2.Enabled = true;
                 loadListB(dataView2, dss);
-            }else if (num == 2)
+            }
+            else if (num == 2)
             {
                 dataView3.Enabled = true;
                 loadListM(dataView3, dstv);
-            }else if (num == 0)
+            }
+            else if (num == 0)
             {
                 dataView1.Enabled = true;
-                loadListDK(dataView1,dsdk);
+                loadListDK(dataView1, dsdk);
             }
             statusBtn = "";
             statusNum = -1;
@@ -1206,7 +1239,7 @@ namespace QuanLiThuVien
         }//re-usable
         private void btn_Cancel2_Click(object sender, EventArgs e)
         {
-           btnHuy();
+            btnHuy();
         }
         private void btn_Cancel3_Click(object sender, EventArgs e)
         {
@@ -1216,7 +1249,7 @@ namespace QuanLiThuVien
         {
             btnHuy();
         }
- 
+
 
         //Lưu file & đọc
         private bool saveFileSach(string filename)
@@ -1276,12 +1309,13 @@ namespace QuanLiThuVien
             BinaryFormatter bf = new BinaryFormatter();
             if (File.Exists(filename))
             {
-                using(FileStream f = new FileStream(filename, FileMode.Open, System.IO.FileAccess.Read))
+                using (FileStream f = new FileStream(filename, FileMode.Open, System.IO.FileAccess.Read))
                 {
                     dss = bf.Deserialize(f) as List<Sach>;
                     return true;
                 }
-            }else { return false; }
+            }
+            else { return false; }
         }
         private bool loadFileThanhVien(string filename)
         {
@@ -1365,7 +1399,7 @@ namespace QuanLiThuVien
 
 
 
-        //testing & got lazy to rename all of this or place 'em in the right place :P
+        //got lazy to rename all of this or place 'em in the right place :P
 
         public void GETVALUE(string data1)
         {//Lấy dữ liệu từ form thứ 2
@@ -1382,7 +1416,7 @@ namespace QuanLiThuVien
         }
         private void tb_IdB_DK_MouseClick(object sender, MouseEventArgs e)
         {
-            if(statusBtn=="Add"||statusBtn=="Adjust") timKiemSach();
+            if (statusBtn == "Add" || statusBtn == "Adjust") timKiemSach();
         }
         private void tb_NameB_DK_Click(object sender, EventArgs e)
         {
@@ -1415,6 +1449,10 @@ namespace QuanLiThuVien
             if (statusBtn == "Add" || statusBtn == "Adjust") timKiemTV();
         }
 
+
+
+
+
         private void tb_IdTV_LS_TextChanged(object sender, EventArgs e)
         {
             List<DangKi> dk1 = new List<DangKi>();
@@ -1427,7 +1465,6 @@ namespace QuanLiThuVien
             }
             loadListDK(dataView4, dk1);
         }
-
         private void tb_IdB_LS_TextChanged(object sender, EventArgs e)
         {
             List<DangKi> dk1 = new List<DangKi>();
@@ -1440,7 +1477,64 @@ namespace QuanLiThuVien
             }
             loadListDK(dataView4, dk1);
         }
+        private void dtpStartSearch_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpStartSearch.Value <= dtpEndSearch.Value)
+            {
+                List<DangKi> test = new List<DangKi>();
+                foreach (var item in dsls)
+                {
+                    if (item.DateE >= dtpStartSearch.Value && item.DateE <= dtpEndSearch.Value)
+                    {
+                        test.Add(item);
+                    }
+                }
+                loadListDK(dataView4, test);
+            }
 
-       
+        }
+        private void dtpEndSearch_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpStartSearch.Value <= dtpEndSearch.Value)
+            {
+                List<DangKi> test = new List<DangKi>();
+                foreach (var item in dsls)
+                {
+                    if (item.DateE >= dtpStartSearch.Value && item.DateE <= dtpEndSearch.Value)
+                    {
+                        test.Add(item);
+                    }
+                }
+                loadListDK(dataView4, test);
+            }
+
+        }
+        private void btn_Cancel4_Click(object sender, EventArgs e)
+        {
+            clearTb();
+            loadListDK(dataView4, dsls);
+        }
+
+
+
+        private void quaHanTra()
+        {
+            List<DangKi> test = new List<DangKi>();
+            foreach (var item in dsdk)
+            {
+                if (item.DateE < DateTime.Now) test.Add(item);
+            }
+            loadListDK(dataView5, test);
+            if (test.Count > 0)
+            {
+                DialogResult kq = MessageBox.Show("Có " + test.Count + " thành viên đã quá hạn trả sách!", "Hey!Look!Listen!", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (kq == DialogResult.OK) { tabControl1.SelectedIndex = 4; }
+               
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btnThoat();
+        }
     }
 }
