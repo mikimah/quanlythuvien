@@ -542,7 +542,7 @@ namespace QuanLiThuVien
         {
             if (statusNum < 0)
             {
-                MessageBox.Show("Hãy chọn 1 đối tượng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hãy chọn 1 đối tượng trong bảng hiện thị!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -580,7 +580,7 @@ namespace QuanLiThuVien
         {
             if (statusNum < 0)
             {
-                MessageBox.Show("Hãy chọn 1 đối tượng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hãy chọn 1 đối tượng trong bảng hiện thị!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -616,7 +616,7 @@ namespace QuanLiThuVien
         {
             if (statusNum < 0)
             {
-                MessageBox.Show("Hãy chọn 1 đối tượng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hãy chọn 1 đối tượng trong bảng hiện thị!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -661,7 +661,7 @@ namespace QuanLiThuVien
         {
             try
             {
-                if (statusNum < 0) { MessageBox.Show("Hãy chọn 1 đối tượng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                if (statusNum < 0) { MessageBox.Show("Hãy chọn 1 đối tượng trong bảng hiện thị!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 else
                 {
                     DialogResult kq = MessageBox.Show("Bạn có chắc là muốn xoá đối tượng này?", "Hey!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -683,7 +683,7 @@ namespace QuanLiThuVien
         {
             try
             {
-                if (statusNum < 0) { MessageBox.Show("Hãy chọn 1 đối tượng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                if (statusNum < 0) { MessageBox.Show("Hãy chọn 1 đối tượng trong bảng hiện thị!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 else
                 {
                     DialogResult kq = MessageBox.Show("Bạn có chắc là muốn xoá đối tượng này?", "Hey!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -705,7 +705,7 @@ namespace QuanLiThuVien
         {
             try
             {
-                if (statusNum < 0) { MessageBox.Show("Hãy chọn 1 đối tượng!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                if (statusNum < 0) { MessageBox.Show("Hãy chọn 1 đối tượng trong bảng hiện thị!", "Hey!", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 else
                 {
                     DialogResult kq = MessageBox.Show("Bạn có chắc không? (Yes = Lưu&Xoá | No = Xoá)", "Hey!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
@@ -831,7 +831,7 @@ namespace QuanLiThuVien
                 }
                 loadListDK(dataView1, dk1);
             }
-            else if (statusBtn == "Add")
+            else if (statusBtn == "Add"||statusBtn=="Adjust")
             {
                 foreach (var item in dss)
                 {
@@ -857,7 +857,7 @@ namespace QuanLiThuVien
                 }
                 loadListDK(dataView1, dk1);
             }
-            else if (statusBtn == "Add")
+            else if (statusBtn == "Add"||statusBtn=="Adjust")
             {
                 foreach (var item in dstv)
                 {
@@ -1249,6 +1249,9 @@ namespace QuanLiThuVien
         {
             btnHuy();
         }
+
+
+
 
 
         //Lưu file & đọc
